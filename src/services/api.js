@@ -1,11 +1,10 @@
 import axios from 'axios';
 
-
 const api = axios.create({
   baseURL: 'http://127.0.0.1:8000/',
 });
 
-// Interceptor to add the token in the header of the request
+// Interceptor to add the Authorization header to requests
 api.interceptors.request.use(
   config => {
     const authTokens = localStorage.getItem('authTokens')
@@ -19,13 +18,13 @@ api.interceptors.request.use(
   error => Promise.reject(error)
 );
 
-// Interceptor to refresh the token if it is expired
+// Interceptor to handle 401 errors and refresh the token
 api.interceptors.response.use(
   response => response,
   async error => {
     const originalRequest = error.config;
 
-    // if the error is 401 and the request has not been retried yet
+    // if the error is 401 and the request hasn't been retried yet
     if (error.response && error.response.status === 401 && !originalRequest._retry) {
       originalRequest._retry = true;
       const authTokens = localStorage.getItem('authTokens')
@@ -36,18 +35,29 @@ api.interceptors.response.use(
         try {
           const response = await axios.post('http://127.0.0.1:8000/api/token/refresh/', {
             refresh: authTokens.refresh,
-          });    
+          });
 
+          localStorage.setItem('authTokens', JSON.stringify(response.data));
 
+          const event = new Event('tokenRefreshed');
+          window.dispatchEvent(event);
 
+          originalRequest.headers['Authorization'] = 'Bearer ' + response.data.access;
 
-
-
-
-
-
-
-
-
+          return api(originalRequest);
+        } catch (err) {
+          console.error('Erro ao atualizar o token:', err);
+          localStorage.removeItem('authTokens');
+          window.location.href = '/login';
+          return Promise.reject(err);
+        }
+      } else {
+        localStorage.removeItem('authTokens');
+        window.location.href = '/login';
+      }
+    }
+    return Promise.reject(error);
+  }
+);
 
 export default api;
