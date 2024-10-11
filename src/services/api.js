@@ -25,6 +25,18 @@ api.interceptors.response.use(
   async error => {
     const originalRequest = error.config;
 
+    // if the error is 401 and the request has not been retried yet
+    if (error.response && error.response.status === 401 && !originalRequest._retry) {
+      originalRequest._retry = true;
+      const authTokens = localStorage.getItem('authTokens')
+        ? JSON.parse(localStorage.getItem('authTokens'))
+        : null;
+
+      if (authTokens && authTokens.refresh) {
+        try {
+          const response = await axios.post('http://127.0.0.1:8000/api/token/refresh/', {
+            refresh: authTokens.refresh,
+          });    
 
 
 
@@ -35,6 +47,7 @@ api.interceptors.response.use(
 
 
 
-    
+
+
 
 export default api;
