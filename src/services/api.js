@@ -19,4 +19,22 @@ api.interceptors.request.use(
   error => Promise.reject(error)
 );
 
+// Interceptor to refresh the token if it is expired
+api.interceptors.response.use(
+  response => response,
+  async error => {
+    const originalRequest = error.config;
+
+
+
+
+
+
+
+
+
+
+
+    
+
 export default api;
