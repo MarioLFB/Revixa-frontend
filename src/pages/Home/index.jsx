@@ -1,7 +1,32 @@
-import React from "react";
+import React, { useContext } from 'react';
+import AuthContext, { AuthProvider } from '../../context/AuthContext';
+import Login from '../login';
 
-const Home = () => {
-    return <div>Home</div>;
-    }
+function Home() {
+  const { user, login, logout } = useContext(AuthContext);
 
-export default Home;
+  return (
+    <div>
+      <h1>Revixa Home Page</h1>
+      {user ? (
+        <div>
+          <h2>Welcome, {user.username}!</h2>
+          <button onClick={logout}>Logout</button>
+        </div>
+      ) : (
+        <Login />
+      )}
+    </div>
+  );
+}
+
+
+function HomeWrapper() {
+  return (
+    <AuthProvider>
+      <Home />
+    </AuthProvider>
+  );
+}
+
+export default HomeWrapper;
