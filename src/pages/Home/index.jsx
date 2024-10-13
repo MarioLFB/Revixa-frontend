@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import AuthContext, { AuthProvider } from '../../context/AuthContext';
-import Login from '../login';
+import Login from '../Login';
 
 function Home() {
   const { user, login, logout } = useContext(AuthContext);
