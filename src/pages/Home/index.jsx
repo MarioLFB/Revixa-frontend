@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import AuthContext, { AuthProvider } from '../../context/AuthContext';
 import Login from '../Login';
+import PostList from '../../components/PostList';
 
 function Home() {
   const { user, login, logout } = useContext(AuthContext);
@@ -12,6 +13,7 @@ function Home() {
         <div>
           <h2>Welcome, {user.username}!</h2>
           <button onClick={logout}>Logout</button>
+          <PostList />
         </div>
       ) : (
         <Login />
