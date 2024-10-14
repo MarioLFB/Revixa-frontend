@@ -1,8 +1,9 @@
-import React, { useEffect, useState, useContext } from "react";
-import { getPosts, deletePost } from "../services/postService";
-import AuthContext from "../context/AuthContext";
-import PostForm from "./PostForm";
-import EditPostForm from "./EditPostForm";
+import React, { useEffect, useState, useContext } from 'react';
+import { getPosts, deletePost } from '../services/postService';
+import AuthContext from '../context/AuthContext';
+import PostForm from './PostForm';
+import EditPostForm from './EditPostForm';
+import LikeButton from './LikeButton';
 
 function PostList() {
   const [posts, setPosts] = useState([]);
@@ -14,7 +15,7 @@ function PostList() {
         const data = await getPosts(authTokens.access);
         setPosts(data);
       } catch (error) {
-        console.error("Error getting posts:", error);
+        console.error('Error getting posts:', error);
       }
     };
 
@@ -26,8 +27,14 @@ function PostList() {
       await deletePost(postId, authTokens.access);
       setPosts(posts.filter((post) => post.id !== postId));
     } catch (error) {
-      console.error("Error when deleting post:", error);
+      console.error('Error deleting the post:', error);
     }
+  };
+
+  const updatePost = (updatedPost) => {
+    setPosts(
+      posts.map((post) => (post.id === updatedPost.id ? updatedPost : post))
+    );
   };
 
   return (
@@ -39,19 +46,12 @@ function PostList() {
           <li key={post.id}>
             <p>{post.content}</p>
             <p>Autor: {post.author}</p>
+            <p>Curtidas: {post.likes_count}</p>
+            <LikeButton post={post} onLikeToggle={updatePost} />
             {post.author === user.username && (
               <div>
-                <EditPostForm
-                  post={post}
-                  onPostUpdated={(updatedPost) =>
-                    setPosts(
-                      posts.map((p) =>
-                        p.id === updatedPost.id ? updatedPost : p
-                      )
-                    )
-                  }
-                />
-                <button onClick={() => handleDelete(post.id)}>Deletar</button>
+                <EditPostForm post={post} onPostUpdated={updatePost} />
+                <button onClick={() => handleDelete(post.id)}>Delet</button>
               </div>
             )}
           </li>
