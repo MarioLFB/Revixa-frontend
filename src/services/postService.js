@@ -37,3 +37,28 @@ export const deletePost = async (postId, token) => {
   });
   return response.data;
 };
+
+export const likePost = async (postId, token) => {
+  const response = await axios.post(
+    `http://127.0.0.1:8000/social/posts/${postId}/like/`,
+    {},
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
+  return response.data;
+};
+
+export const unlikePost = async (postId, token) => {
+  const response = await axios.delete(
+    `http://127.0.0.1:8000/social/posts/${postId}/like/`,
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
+  return response.data;
+};
