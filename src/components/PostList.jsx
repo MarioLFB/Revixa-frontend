@@ -45,13 +45,13 @@ function PostList() {
         {posts.map((post) => (
           <li key={post.id}>
             <p>{post.content}</p>
-            <p>Autor: {post.author}</p>
-            <p>Curtidas: {post.likes_count}</p>
+            <p>Author: {post.author}</p>
+            <p>Likes: {post.likes_count}</p>
             <LikeButton post={post} onLikeToggle={updatePost} />
             {post.author === user.username && (
               <div>
                 <EditPostForm post={post} onPostUpdated={updatePost} />
-                <button onClick={() => handleDelete(post.id)}>Delet</button>
+                <button onClick={() => handleDelete(post.id)}>Delete</button>
               </div>
             )}
           </li>
