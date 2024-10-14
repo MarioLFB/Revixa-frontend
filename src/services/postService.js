@@ -28,3 +28,12 @@ export const updatePost = async (postId, postData, token) => {
   });
   return response.data;
 };
+
+export const deletePost = async (postId, token) => {
+  const response = await axios.delete(`${API_URL}${postId}/`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+  return response.data;
+};
