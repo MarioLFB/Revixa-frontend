@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { getAllReviews } from '../services/reviews';
 import AuthContext from '../context/AuthContext';
+import { getAllReviews } from '../services/reviews';
+import ReviewPosts from './ReviewPosts';
 
 function Reviews() {
   const { user } = useContext(AuthContext);
   const [reviews, setReviews] = useState([]);
+  const [selectedReviewId, setSelectedReviewId] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -18,7 +20,7 @@ function Reviews() {
         const data = await getAllReviews();
         setReviews(data);
       } catch (error) {
-        console.error('Error loading reviews:', error);
+        throw error;
       } finally {
         setLoading(false);
       }
@@ -28,11 +30,20 @@ function Reviews() {
   }, [user]);
 
   if (!user) {
-    return <p>You need to be logged in to view the reviews.</p>;
+    return <p>You need to be logged in to see the reviews.</p>;
   }
 
   if (loading) {
     return <p>Loading reviews...</p>;
+  }
+
+  if (selectedReviewId) {
+    return (
+      <ReviewPosts
+        reviewId={selectedReviewId}
+        onBack={() => setSelectedReviewId(null)}
+      />
+    );
   }
 
   return (
@@ -48,6 +59,9 @@ function Reviews() {
               <p>Version: {review.framework_version}</p>
               <p>Author: {review.author}</p>
               <p>Created on: {new Date(review.created_at).toLocaleString()}</p>
+              <button onClick={() => setSelectedReviewId(review.id)}>
+                View Posts
+              </button>
             </li>
           ))}
         </ul>
