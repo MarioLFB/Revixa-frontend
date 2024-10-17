@@ -1,13 +1,13 @@
-import React, { useState, useEffect, useContext } from 'react';
-import AuthContext from '../context/AuthContext';
-import { getAllReviews } from '../services/reviews';
-import ReviewPosts from './ReviewPosts';
+import React, { useState, useEffect, useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import AuthContext from "../../context/AuthContext";
+import { getAllReviews } from "../../services/reviews";
 
 function Reviews() {
   const { user } = useContext(AuthContext);
   const [reviews, setReviews] = useState([]);
-  const [selectedReviewId, setSelectedReviewId] = useState(null);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (!user) {
@@ -37,14 +37,9 @@ function Reviews() {
     return <p>Loading reviews...</p>;
   }
 
-  if (selectedReviewId) {
-    return (
-      <ReviewPosts
-        reviewId={selectedReviewId}
-        onBack={() => setSelectedReviewId(null)}
-      />
-    );
-  }
+  const handleViewPosts = (reviewId) => {
+    navigate(`/reviews/${reviewId}/posts`);
+  };
 
   return (
     <div>
@@ -59,7 +54,7 @@ function Reviews() {
               <p>Version: {review.framework_version}</p>
               <p>Author: {review.author}</p>
               <p>Created on: {new Date(review.created_at).toLocaleString()}</p>
-              <button onClick={() => setSelectedReviewId(review.id)}>
+              <button onClick={() => handleViewPosts(review.id)}>
                 View Posts
               </button>
             </li>

@@ -1,11 +1,14 @@
-import React, { useState, useEffect, useContext } from 'react';
-import AuthContext from '../context/AuthContext';
-import { getPostsByReviewId } from '../services/posts';
+import React, { useState, useEffect, useContext } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import AuthContext from "../../context/AuthContext";
+import { getPostsByReviewId } from "../../services/posts";
 
-function ReviewPosts({ reviewId, onBack }) {
+function ReviewPosts() {
   const { user } = useContext(AuthContext);
+  const { reviewId } = useParams();
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (!user) {
@@ -38,13 +41,14 @@ function ReviewPosts({ reviewId, onBack }) {
   return (
     <div>
       <h1>Posts for Review {reviewId}</h1>
-      <button onClick={onBack}>Back to Reviews</button>
+      <button onClick={() => navigate("/reviews")}>Back to Reviews</button>
       {posts.length > 0 ? (
         <ul>
           {posts.map((post) => (
             <li key={post.id}>
               <p>
-                <strong>{post.author}</strong> on {new Date(post.created_at).toLocaleString()}
+                <strong>{post.author}</strong> on{" "}
+                {new Date(post.created_at).toLocaleString()}
               </p>
               <p>{post.content}</p>
             </li>
