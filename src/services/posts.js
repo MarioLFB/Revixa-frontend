@@ -9,3 +9,13 @@ export async function getPostsByReviewId(reviewId) {
     throw error;
   }
 }
+
+export async function createPost(reviewId, postData) {
+  try {
+    const response = await api.post(`/social/reviews/${reviewId}/posts/`, postData);
+    return response.data;
+  } catch (error) {
+    console.error('Error when creating post:', error);
+    throw error;
+  }
+}
