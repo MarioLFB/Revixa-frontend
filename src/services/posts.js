@@ -19,3 +19,14 @@ export async function createPost(reviewId, postData) {
     throw error;
   }
 }
+
+
+export async function updatePost(postId, postData) {
+  try {
+    const response = await api.put(`/social/posts/${postId}/`, postData);
+    return response.data;
+  } catch (error) {
+    console.error('Error when updating post:', error);
+    throw error;
+  }
+}
