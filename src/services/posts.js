@@ -10,6 +10,7 @@ export async function getPostsByReviewId(reviewId) {
   }
 }
 
+
 export async function createPost(reviewId, postData) {
   try {
     const response = await api.post(`/social/reviews/${reviewId}/posts/`, postData);
@@ -27,6 +28,16 @@ export async function updatePost(postId, postData) {
     return response.data;
   } catch (error) {
     console.error('Error when updating post:', error);
+    throw error;
+  }
+}
+
+
+export async function deletePost(postId) {
+  try {
+    await api.delete(`/social/posts/${postId}/`);
+  } catch (error) {
+    console.error('Error when deleting post:', error);
     throw error;
   }
 }
