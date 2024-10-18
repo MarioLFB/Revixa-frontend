@@ -1,13 +1,17 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
-import { getPostsByReviewId } from "../../services/posts";
+import { getPostsByReviewId, createPost, updatePost, deletePost } from '../../services/posts';
 
 function ReviewPosts() {
   const { user } = useContext(AuthContext);
   const { reviewId } = useParams();
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [newPostContent, setNewPostContent] = useState('');
+  const [editPostId, setEditPostId] = useState(null);
+  const [editPostContent, setEditPostContent] = useState('');
+  const [error, setError] = useState('');
   const navigate = useNavigate();
 
   useEffect(() => {
