@@ -15,27 +15,75 @@ function ReviewPosts() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!user) {
-      setLoading(false);
-      return;
-    }
-
     const fetchPosts = async () => {
       try {
         const data = await getPostsByReviewId(reviewId);
         setPosts(data);
       } catch (error) {
-        throw error;
+        console.error('Failed to fetch posts:', error);
       } finally {
         setLoading(false);
       }
     };
 
     fetchPosts();
-  }, [user, reviewId]);
+  }, [reviewId]);
+
+  const handleSubmitPost = async (e) => {
+    e.preventDefault();
+
+    if (!newPostContent.trim()) {
+      setError('Post content cannot be empty');
+      return;
+    }
+
+    try {
+      const newPost = await createPost(reviewId, { content: newPostContent, author: user.username });
+      setPosts([...posts, newPost]);
+      setNewPostContent('');
+      setError('');
+    } catch (err) {
+      console.error('Failed to create post:', err);
+      setError('Failed to create post');
+    }
+  };
+
+  const handleEditPost = (post) => {
+    setEditPostId(post.id);
+    setEditPostContent(post.content);
+  };
+
+  const handleSaveEdit = async (e) => {
+    e.preventDefault();
+
+    if (!editPostContent.trim()) {
+      setError('Post content cannot be empty');
+      return;
+    }
+
+    try {
+      await updatePost(editPostId, { content: editPostContent });
+      setPosts(posts.map(post => (post.id === editPostId ? { ...post, content: editPostContent } : post)));
+      setEditPostId(null);
+      setEditPostContent('');
+      setError('');
+    } catch (error) {
+      console.error('Failed to update post:', error);
+      setError('Failed to update post');
+    }
+  };
+
+  const handleDelete = async (postId) => {
+    try {
+      await deletePost(postId);
+      setPosts(posts.filter((post) => post.id !== postId));
+    } catch (error) {
+      console.error('Failed to delete post:', error);
+    }
+  };
 
   if (!user) {
-    return <p>You need to be logged in to view the posts.</p>;
+    return <p>You need to be logged in to view and create posts.</p>;
   }
 
   if (loading) {
@@ -45,16 +93,50 @@ function ReviewPosts() {
   return (
     <div>
       <h1>Posts for Review {reviewId}</h1>
-      <button onClick={() => navigate("/reviews")}>Back to Reviews</button>
+      <button onClick={() => navigate('/reviews')}>Back to Reviews</button>
+
+      <form onSubmit={handleSubmitPost}>
+        <h2>Create a new post</h2>
+        {error && <p style={{ color: 'red' }}>{error}</p>}
+        <textarea
+          value={newPostContent}
+          onChange={(e) => setNewPostContent(e.target.value)}
+          placeholder="Write your post here"
+          rows="4"
+        />
+        <button type="submit">Submit Post</button>
+      </form>
+
       {posts.length > 0 ? (
         <ul>
           {posts.map((post) => (
             <li key={post.id}>
               <p>
-                <strong>{post.author}</strong> on{" "}
-                {new Date(post.created_at).toLocaleString()}
+                <strong>{post.author}</strong> on {new Date(post.created_at).toLocaleString()}
               </p>
-              <p>{post.content}</p>
+
+              {editPostId === post.id ? (
+                <form onSubmit={handleSaveEdit}>
+                  <textarea
+                    value={editPostContent}
+                    onChange={(e) => setEditPostContent(e.target.value)}
+                    rows="4"
+                  />
+                  <button type="submit">Save</button>
+                  <button type="button" onClick={() => setEditPostId(null)}>Cancel</button>
+                </form>
+              ) : (
+                <>
+                  <p>{post.content}</p>
+
+                  {user.username === post.author && (
+                    <>
+                      <button onClick={() => handleEditPost(post)}>Edit</button>
+                      <button onClick={() => handleDelete(post.id)}>Delete</button>
+                    </>
+                  )}
+                </>
+              )}
             </li>
           ))}
         </ul>
