@@ -1,17 +1,23 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
-import { getPostsByReviewId, createPost, updatePost, deletePost } from '../../services/posts';
+import {
+  getPostsByReviewId,
+  createPost,
+  updatePost,
+  deletePost,
+} from "../../services/posts";
+import Post from "../../components/Post";
 
 function ReviewPosts() {
   const { user } = useContext(AuthContext);
   const { reviewId } = useParams();
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [newPostContent, setNewPostContent] = useState('');
+  const [newPostContent, setNewPostContent] = useState("");
   const [editPostId, setEditPostId] = useState(null);
-  const [editPostContent, setEditPostContent] = useState('');
-  const [error, setError] = useState('');
+  const [editPostContent, setEditPostContent] = useState("");
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -20,7 +26,7 @@ function ReviewPosts() {
         const data = await getPostsByReviewId(reviewId);
         setPosts(data);
       } catch (error) {
-        console.error('Failed to fetch posts:', error);
+        console.error("Failed to fetch posts:", error);
       } finally {
         setLoading(false);
       }
@@ -33,18 +39,21 @@ function ReviewPosts() {
     e.preventDefault();
 
     if (!newPostContent.trim()) {
-      setError('Post content cannot be empty');
+      setError("Post content cannot be empty");
       return;
     }
 
     try {
-      const newPost = await createPost(reviewId, { content: newPostContent, author: user.username });
+      const newPost = await createPost(reviewId, {
+        content: newPostContent,
+        author: user.username,
+      });
       setPosts([...posts, newPost]);
-      setNewPostContent('');
-      setError('');
+      setNewPostContent("");
+      setError("");
     } catch (err) {
-      console.error('Failed to create post:', err);
-      setError('Failed to create post');
+      console.error("Failed to create post:", err);
+      setError("Failed to create post");
     }
   };
 
@@ -57,19 +66,23 @@ function ReviewPosts() {
     e.preventDefault();
 
     if (!editPostContent.trim()) {
-      setError('Post content cannot be empty');
+      setError("Post content cannot be empty");
       return;
     }
 
     try {
       await updatePost(editPostId, { content: editPostContent });
-      setPosts(posts.map(post => (post.id === editPostId ? { ...post, content: editPostContent } : post)));
+      setPosts(
+        posts.map((post) =>
+          post.id === editPostId ? { ...post, content: editPostContent } : post
+        )
+      );
       setEditPostId(null);
-      setEditPostContent('');
-      setError('');
+      setEditPostContent("");
+      setError("");
     } catch (error) {
-      console.error('Failed to update post:', error);
-      setError('Failed to update post');
+      console.error("Failed to update post:", error);
+      setError("Failed to update post");
     }
   };
 
@@ -78,7 +91,7 @@ function ReviewPosts() {
       await deletePost(postId);
       setPosts(posts.filter((post) => post.id !== postId));
     } catch (error) {
-      console.error('Failed to delete post:', error);
+      console.error("Failed to delete post:", error);
     }
   };
 
@@ -93,11 +106,11 @@ function ReviewPosts() {
   return (
     <div>
       <h1>Posts for Review {reviewId}</h1>
-      <button onClick={() => navigate('/reviews')}>Back to Reviews</button>
+      <button onClick={() => navigate("/reviews")}>Back to Reviews</button>
 
       <form onSubmit={handleSubmitPost}>
         <h2>Create a new post</h2>
-        {error && <p style={{ color: 'red' }}>{error}</p>}
+        {error && <p style={{ color: "red" }}>{error}</p>}
         <textarea
           value={newPostContent}
           onChange={(e) => setNewPostContent(e.target.value)}
@@ -112,7 +125,8 @@ function ReviewPosts() {
           {posts.map((post) => (
             <li key={post.id}>
               <p>
-                <strong>{post.author}</strong> on {new Date(post.created_at).toLocaleString()}
+                <strong>{post.author}</strong> on{" "}
+                {new Date(post.created_at).toLocaleString()}
               </p>
 
               {editPostId === post.id ? (
@@ -123,17 +137,20 @@ function ReviewPosts() {
                     rows="4"
                   />
                   <button type="submit">Save</button>
-                  <button type="button" onClick={() => setEditPostId(null)}>Cancel</button>
+                  <button type="button" onClick={() => setEditPostId(null)}>
+                    Cancel
+                  </button>
                 </form>
               ) : (
                 <>
-                  <p>{post.content}</p>
-
+                  <Post post={post} />
                   {user.username === post.author && (
-                    <>
+                    <div>
                       <button onClick={() => handleEditPost(post)}>Edit</button>
-                      <button onClick={() => handleDelete(post.id)}>Delete</button>
-                    </>
+                      <button onClick={() => handleDelete(post.id)}>
+                        Delete
+                      </button>
+                    </div>
                   )}
                 </>
               )}
