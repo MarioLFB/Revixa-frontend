@@ -21,7 +21,7 @@ function MyNavbar() {
 
   return (
     <Container>
-      <Navbar expand="lg" className="bg-body-tertiary">
+      <Navbar expand="lg" className="bg-white">
         <Container>
           <Navbar.Brand>
             <Logo to="/" className="navbar-brand">Revixa</Logo>
