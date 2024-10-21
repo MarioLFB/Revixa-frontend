@@ -37,7 +37,7 @@ const FormContainer = styled.div`
 `;
 
 const Title = styled.h2`
-  font-family: 'Pacifico', cursive;
+  font-family: 'Pacifico', sans-serif;
   font-size: 3rem;
   color: #333;
 `;
