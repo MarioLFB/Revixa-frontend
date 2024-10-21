@@ -27,12 +27,14 @@ const LoginWrapper = styled.div`
 `;
 
 const FormContainer = styled.div`
-  padding: 30px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  background-color: rgba(255, 255, 255, 0.9); /* Leve transparência */
+  border-radius: 20px; /* Bordas mais suaves */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Sombra mais definida */
+  max-width: 400px;
+  width: 100%;
   text-align: center;
-`;
+`;  
 
 function Login() {
   const [username, setUsername] = useState("");
