@@ -3,6 +3,18 @@ import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import AuthContext from '../context/AuthContext';
+import styled from 'styled-components';
+
+
+const Logo = styled(Link)`
+  font-size: 2rem;
+  font-weight: bold;
+  background: linear-gradient(270deg, #FFDB73, #FE824D, #FF6347, #FFA07A);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  text-decoration: none;
+`;
 
 function MyNavbar() {
   const { user, logout } = useContext(AuthContext);
@@ -12,7 +24,7 @@ function MyNavbar() {
       <Navbar expand="lg" className="bg-body-tertiary">
         <Container>
           <Navbar.Brand>
-            <Link to="/" className="navbar-brand">Revixa</Link>
+            <Logo to="/" className="navbar-brand">Revixa</Logo>
           </Navbar.Brand>
           <div className="ml-auto">
             {user ? (
