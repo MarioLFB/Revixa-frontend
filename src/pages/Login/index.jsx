@@ -23,18 +23,24 @@ const LoginWrapper = styled.div`
   align-items: center;
   background: linear-gradient(270deg, #ffdb73, #fe824d, #ff6347, #ffa07a);
   background-size: 400% 400%;
-  animation: ${moveGradient} 15s ease infinite; /* Movimenta o gradiente */
+  animation: ${moveGradient} 15s ease infinite;
 `;
 
 const FormContainer = styled.div`
   padding: 40px;
-  background-color: rgba(255, 255, 255, 0.9); /* Leve transparência */
-  border-radius: 20px; /* Bordas mais suaves */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Sombra mais definida */
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   max-width: 400px;
   width: 100%;
   text-align: center;
-`;  
+`;
+
+const Title = styled.h2`
+  font-family: 'Pacifico', cursive;
+  font-size: 3rem;
+  color: #333;
+`;
 
 function Login() {
   const [username, setUsername] = useState("");
@@ -63,7 +69,7 @@ function Login() {
     <LoginWrapper>
       <FormContainer>
         <Form onSubmit={handleSubmit}>
-          <h2>Login</h2>
+        <Title className="mb-4">Login</Title>
           {error && <p style={{ color: "red" }}>{error}</p>}
 
           <Form.Group className="mb-3" controlId="formBasicUsername">
