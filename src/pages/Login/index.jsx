@@ -73,7 +73,6 @@ function Login() {
           {error && <p style={{ color: "red" }}>{error}</p>}
 
           <Form.Group className="mb-3" controlId="formBasicUsername">
-            <Form.Label>Username</Form.Label>
             <Form.Control
               type="text"
               placeholder="Enter username"
@@ -84,7 +83,6 @@ function Login() {
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="formBasicPassword">
-            <Form.Label>Password</Form.Label>
             <Form.Control
               type="password"
               placeholder="Enter password"
