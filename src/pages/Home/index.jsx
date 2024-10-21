@@ -4,12 +4,14 @@ import Home from './Home';
 import Login from '../Login';
 import Reviews from '../Reviews/Reviews';
 import ReviewPosts from '../Reviews/ReviewPosts';
+import MyNavbar from '../../components/Navbar';
 
 
 
 function HomeWrapper() {
   return (
     <Router> {/* Definindo o roteamento */}
+      <MyNavbar /> {/* Navbar */}
       <Routes>
         <Route path="/" element={<Home />} /> {/* Home Page */}
         <Route path="/login" element={<Login />} /> {/* Login Page */}
