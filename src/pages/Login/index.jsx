@@ -1,62 +1,97 @@
-import React, { useState, useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
-import AuthContext from '../../context/AuthContext';
-import { Form, Button } from 'react-bootstrap';
+import React, { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import AuthContext from "../../context/AuthContext";
+import { Form, Button } from "react-bootstrap";
+import styled, { keyframes } from "styled-components";
+
+const moveGradient = keyframes`
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+`;
+
+const LoginWrapper = styled.div`
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(270deg, #ffdb73, #fe824d, #ff6347, #ffa07a);
+  background-size: 400% 400%;
+  animation: ${moveGradient} 15s ease infinite; /* Movimenta o gradiente */
+`;
+
+const FormContainer = styled.div`
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+`;
 
 function Login() {
-  const [username, setUsername] = useState(''); 
-  const [password, setPassword] = useState(''); 
-  const [loading, setLoading] = useState(false); 
-  const [error, setError] = useState(''); 
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  const { login } = useContext(AuthContext); 
+  const { login } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    setError('');
+    setError("");
     try {
       await login({ username, password });
-      navigate('/');
+      navigate("/");
     } catch (err) {
-      setError('Invalid username or password');
+      setError("Invalid username or password");
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <Form onSubmit={handleSubmit}>
-      <h2>Login</h2>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-      
-      <Form.Group className="mb-3" controlId="formBasicUsername">
-        <Form.Label>Username</Form.Label>
-        <Form.Control
-          type="text"
-          placeholder="Enter username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          disabled={loading}
-        />
-      </Form.Group>
+    <LoginWrapper>
+      <FormContainer>
+        <Form onSubmit={handleSubmit}>
+          <h2>Login</h2>
+          {error && <p style={{ color: "red" }}>{error}</p>}
 
-      <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Password</Form.Label>
-        <Form.Control
-          type="password"
-          placeholder="Enter password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          disabled={loading}
-        />
-      </Form.Group>
+          <Form.Group className="mb-3" controlId="formBasicUsername">
+            <Form.Label>Username</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Enter username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              disabled={loading}
+            />
+          </Form.Group>
 
-      <Button variant="primary" type="submit" disabled={loading}>
-        {loading ? 'Logging in...' : 'Enter'}
-      </Button>
-    </Form>
+          <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Label>Password</Form.Label>
+            <Form.Control
+              type="password"
+              placeholder="Enter password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              disabled={loading}
+            />
+          </Form.Group>
+
+          <Button variant="primary" type="submit" disabled={loading}>
+            {loading ? "Logging in..." : "Enter"}
+          </Button>
+        </Form>
+      </FormContainer>
+    </LoginWrapper>
   );
 }
 
