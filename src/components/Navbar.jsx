@@ -7,13 +7,14 @@ import styled from 'styled-components';
 
 
 const Logo = styled(Link)`
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: bold;
   background: linear-gradient(270deg, #FFDB73, #FE824D, #FF6347, #FFA07A);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
   text-decoration: none;
+  font-family: 'Pacifico', sans-serif;
 `;
 
 function MyNavbar() {
