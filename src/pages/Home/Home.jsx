@@ -8,13 +8,12 @@ function Home() {
   return (
     <div className="container mt-4">
       <h1>Revixa Home Page</h1>
+      <Reviews />
       {user ? (
         <div>
-          <h2>Welcome, {user.username}!</h2>
-          <Reviews />
         </div>
       ) : (
-        <h2>Please log in to access the content.</h2>
+        <h2>Please log in to view or create posts.</h2>
       )}
     </div>
   );

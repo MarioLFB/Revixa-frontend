@@ -10,36 +10,32 @@ function Reviews() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!user) {
-      setLoading(false);
-      return;
-    }
-
     const fetchReviews = async () => {
       try {
         const data = await getAllReviews();
         setReviews(data);
       } catch (error) {
-        throw error;
+        console.error("Error fetching reviews:", error);
       } finally {
         setLoading(false);
       }
     };
 
     fetchReviews();
-  }, [user]);
+  }, []);
 
-  if (!user) {
-    return <p>You need to be logged in to see the reviews.</p>;
-  }
+  const handleViewPosts = (reviewId) => {
+    if (!user) {
+      alert("You need to be logged in to view posts.");
+      navigate("/login");
+    } else {
+      navigate(`/reviews/${reviewId}/posts`);
+    }
+  };
 
   if (loading) {
     return <p>Loading reviews...</p>;
   }
-
-  const handleViewPosts = (reviewId) => {
-    navigate(`/reviews/${reviewId}/posts`);
-  };
 
   return (
     <div>
@@ -55,7 +51,7 @@ function Reviews() {
               <p>Author: {review.author}</p>
               <p>Created on: {new Date(review.created_at).toLocaleString()}</p>
               <button onClick={() => handleViewPosts(review.id)}>
-                View Posts
+                {user ? "View Posts" : "Login to View Posts"}
               </button>
             </li>
           ))}
