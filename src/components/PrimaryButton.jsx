@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
-const PrimaryButton = styled.button`
+const PrimaryButton = styled(Link)`
   background-color: #ff7f50;
   color: white;
   padding: 10px 20px;
