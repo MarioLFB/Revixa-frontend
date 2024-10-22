@@ -7,13 +7,15 @@ const PrimaryButton = styled(Link)`
   padding: 10px 20px;
   border-radius: 5px;
   font-size: 1rem;
-  border: none;
-  cursor: pointer;
-  display: inline-block;
+  text-decoration: none;
   text-align: center;
+  border: none;
+  display: inline-block;
 
   &:hover {
     background-color: #e67345;
+    color: white;
+    text-decoration: none;
   }
 `;
 
