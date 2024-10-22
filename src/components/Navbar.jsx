@@ -18,15 +18,15 @@ const Logo = styled(Link)`
 `;
 
 const LoginButton = styled(Link)`
-  background-color: #ff7f50; /* Cor laranja */
-  color: white; /* Texto branco */
+  background-color: #ff7f50;
+  color: white;
   padding: 10px 20px;
-  border-radius: 5px; /* Bordas ligeiramente arredondadas para manter o botão retangular */
+  border-radius: 5px;
   font-size: 1rem;
   text-decoration: none;
 
   &:hover {
-    background-color: #e67345; /* Cor laranja mais escura no hover */
+    background-color: #e67345;
     color: white;
   }
 `;
