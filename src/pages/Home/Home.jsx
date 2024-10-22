@@ -1,6 +1,49 @@
 import React, { useState, useEffect } from "react";
 import Carousel from "react-bootstrap/Carousel";
 import { getAllReviews } from "../../services/reviews";
+import styled from "styled-components";
+
+const HomeWrapper = styled.div`
+  padding: 50px 0;
+  background-color: #fff;
+`;
+
+const HeaderContainer = styled.div`
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+`;
+
+const CarouselContainer = styled.div`
+  max-width: 1200px;
+  margin: 40px auto 0;
+  padding: 40px;
+  background: linear-gradient(270deg, #ffdb73, #fe824d, #ff6347, #ffa07a);
+  border-radius: 15px;
+  color: #fff;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+`;
+
+const CarouselContent = styled.div`
+  color: #fff;
+  text-align: center;
+  padding: 30px 20px;
+`;
+
+const Title = styled.h1`
+  font-family: 'Pacifico', sans-serif;
+  color: #ff6347;
+  margin-bottom: 20px;
+`;
+
+const Description = styled.p`
+  font-size: 1.2rem;
+  color: #333;
+`;
 
 function Home() {
   const [reviews, setReviews] = useState([]);
@@ -22,41 +65,41 @@ function Home() {
   }, []);
 
   return (
-    <div className="container mt-4">
-      <h1>Revixa</h1>
-      <p>
-        Explore comprehensive reviews of the latest web development frameworks.
-        Revixa provides in-depth insights, comparisons, and user-driven feedback
-        on popular frameworks like React, Angular, Django, and more. Whether
-        you're a seasoned developer or just starting out, find the tools and
-        knowledge you need to choose the right technology for your next project.
-        Sign in to explore detailed posts or contribute com your own experiences.
-      </p>
+    <HomeWrapper>
+      <HeaderContainer>
+        <Title>Revixa</Title>
+        <Description>
+          Explore comprehensive reviews of the latest web development frameworks.
+          Revixa provides in-depth insights, comparisons, and user-driven feedback
+          on popular frameworks like React, Angular, Django, and more. Whether
+          you're a seasoned developer or just starting out, find the tools and
+          knowledge you need to choose the right technology for your next project.
+          Sign in to engage with detailed posts or share your own experiences.
+        </Description>
+      </HeaderContainer>
 
       {loading ? (
         <p>Loading reviews...</p>
       ) : (
-        <Carousel fade>
-          {reviews.slice(0, 3).map((review) => (
-            <Carousel.Item key={review.id}>
-              <div className="carousel-content">
-                <h3>{review.title}</h3>
-                <p>{review.content}</p>
-                <p>
-                  <strong>Framework:</strong> {review.framework_name}
-                </p>
-                <p>
-                  <strong>Version:</strong> {review.framework_version}
-                </p>
-              </div>
-              <Carousel.Caption>
-                <h3>{review.title}</h3>
-              </Carousel.Caption>
-            </Carousel.Item>
-          ))}
-        </Carousel>
+        <CarouselContainer>
+          <Carousel fade>
+            {reviews.slice(0, 3).map((review) => (
+              <Carousel.Item key={review.id}>
+                <CarouselContent>
+                  <h3>{review.title}</h3>
+                  <p>
+                    <strong>Framework:</strong> {review.framework_name}
+                  </p>
+                  <p>
+                    <strong>Version:</strong> {review.framework_version}
+                  </p>
+                </CarouselContent>
+              </Carousel.Item>
+            ))}
+          </Carousel>
+        </CarouselContainer>
       )}
-    </div>
+    </HomeWrapper>
   );
 }
 
