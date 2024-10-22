@@ -17,6 +17,20 @@ const Logo = styled(Link)`
   font-family: 'Pacifico', sans-serif;
 `;
 
+const LoginButton = styled(Link)`
+  background-color: #ff7f50; /* Cor laranja */
+  color: white; /* Texto branco */
+  padding: 10px 20px;
+  border-radius: 5px; /* Bordas ligeiramente arredondadas para manter o botão retangular */
+  font-size: 1rem;
+  text-decoration: none;
+
+  &:hover {
+    background-color: #e67345; /* Cor laranja mais escura no hover */
+    color: white;
+  }
+`;
+
 function MyNavbar() {
   const { user, logout } = useContext(AuthContext);
 
@@ -36,9 +50,9 @@ function MyNavbar() {
                 </button>
               </>
             ) : (
-              <Link to="/login" className="btn btn-primary">
+              <LoginButton to="/login">
                 Login
-              </Link>
+              </LoginButton>
             )}
           </div>
         </Container>
