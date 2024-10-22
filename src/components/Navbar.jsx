@@ -1,34 +1,20 @@
-import Container from 'react-bootstrap/Container';
-import Navbar from 'react-bootstrap/Navbar';
-import { Link } from 'react-router-dom';
-import { useContext } from 'react';
-import AuthContext from '../context/AuthContext';
-import styled from 'styled-components';
-
+import Container from "react-bootstrap/Container";
+import Navbar from "react-bootstrap/Navbar";
+import { Link } from "react-router-dom";
+import { useContext } from "react";
+import AuthContext from "../context/AuthContext";
+import styled from "styled-components";
+import PrimaryButton from "./PrimaryButton";
 
 const Logo = styled(Link)`
   font-size: 3rem;
   font-weight: bold;
-  background: linear-gradient(270deg, #FFDB73, #FE824D, #FF6347, #FFA07A);
+  background: linear-gradient(270deg, #ffdb73, #fe824d, #ff6347, #ffa07a);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
   text-decoration: none;
-  font-family: 'Pacifico', sans-serif;
-`;
-
-const LoginButton = styled(Link)`
-  background-color: #ff7f50;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
-  font-size: 1rem;
-  text-decoration: none;
-
-  &:hover {
-    background-color: #e67345;
-    color: white;
-  }
+  font-family: "Pacifico", sans-serif;
 `;
 
 function MyNavbar() {
@@ -39,7 +25,9 @@ function MyNavbar() {
       <Navbar expand="lg" className="bg-white">
         <Container>
           <Navbar.Brand>
-            <Logo to="/" className="navbar-brand">Revixa</Logo>
+            <Logo to="/" className="navbar-brand">
+              Revixa
+            </Logo>
           </Navbar.Brand>
           <div className="ml-auto">
             {user ? (
@@ -50,9 +38,7 @@ function MyNavbar() {
                 </button>
               </>
             ) : (
-              <LoginButton to="/login">
-                Login
-              </LoginButton>
+              <PrimaryButton to="/login">Login</PrimaryButton>
             )}
           </div>
         </Container>
