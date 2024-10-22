@@ -33,9 +33,9 @@ function MyNavbar() {
             {user ? (
               <>
                 <span className="navbar-text me-3">Hello, {user.username}</span>
-                <button className="btn btn-outline-danger" onClick={logout}>
+                <PrimaryButton as="button" onClick={logout}>
                   Logout
-                </button>
+                </PrimaryButton>
               </>
             ) : (
               <PrimaryButton to="/login">Login</PrimaryButton>
