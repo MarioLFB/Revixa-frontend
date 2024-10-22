@@ -1,8 +1,9 @@
 import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
-import { Form, Button } from "react-bootstrap";
+import { Form } from "react-bootstrap";
 import styled, { keyframes } from "styled-components";
+import PrimaryButton from "../../components/PrimaryButton";
 
 const moveGradient = keyframes`
   0% {
@@ -37,7 +38,7 @@ const FormContainer = styled.div`
 `;
 
 const Title = styled.h2`
-  font-family: 'Pacifico', sans-serif;
+  font-family: "Pacifico", sans-serif;
   font-size: 3rem;
   color: #333;
 `;
@@ -69,7 +70,7 @@ function Login() {
     <LoginWrapper>
       <FormContainer>
         <Form onSubmit={handleSubmit}>
-        <Title className="mb-4">Login</Title>
+          <Title className="mb-4">Login</Title>
           {error && <p style={{ color: "red" }}>{error}</p>}
 
           <Form.Group className="mb-3" controlId="formBasicUsername">
@@ -92,9 +93,9 @@ function Login() {
             />
           </Form.Group>
 
-          <Button variant="primary" type="submit" disabled={loading}>
+          <PrimaryButton as="button" type="submit" disabled={loading}>
             {loading ? "Logging in..." : "Enter"}
-          </Button>
+          </PrimaryButton>
         </Form>
       </FormContainer>
     </LoginWrapper>
