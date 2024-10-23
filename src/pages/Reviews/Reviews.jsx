@@ -2,6 +2,8 @@ import React, { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
 import { getAllReviews } from "../../services/reviews";
+import GlobalStyle from "../../components/GlobalStyles";
+
 
 function Reviews() {
   const { user } = useContext(AuthContext);
@@ -39,6 +41,7 @@ function Reviews() {
 
   return (
     <div>
+      <GlobalStyle />
       <h1>All Reviews</h1>
       {reviews.length > 0 ? (
         <ul>
