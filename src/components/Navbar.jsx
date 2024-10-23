@@ -21,29 +21,27 @@ function MyNavbar() {
   const { user, logout } = useContext(AuthContext);
 
   return (
-    <Container>
-      <Navbar expand="lg" className="bg-white">
-        <Container>
-          <Navbar.Brand>
-            <Logo to="/" className="navbar-brand">
-              Revixa
-            </Logo>
-          </Navbar.Brand>
-          <div className="ml-auto">
-            {user ? (
-              <>
-                <span className="navbar-text me-3">Hello, {user.username}</span>
-                <PrimaryButton as="button" onClick={logout}>
-                  Logout
-                </PrimaryButton>
-              </>
-            ) : (
-              <PrimaryButton to="/login">Login</PrimaryButton>
-            )}
-          </div>
-        </Container>
-      </Navbar>
-    </Container>
+    <Navbar expand="lg" className="bg-white">
+      <Container fluid>
+        <Navbar.Brand>
+          <Logo to="/" className="navbar-brand">
+            Revixa
+          </Logo>
+        </Navbar.Brand>
+        <div className="ms-auto">
+          {user ? (
+            <>
+              <span className="navbar-text me-3">Hello, {user.username}</span>
+              <PrimaryButton as="button" onClick={logout}>
+                Logout
+              </PrimaryButton>
+            </>
+          ) : (
+            <PrimaryButton to="/login">Login</PrimaryButton>
+          )}
+        </div>
+      </Container>
+    </Navbar>
   );
 }
 
