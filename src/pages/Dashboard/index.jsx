@@ -14,7 +14,6 @@ function Dashboard() {
   return (
     <DashboardWrapper>
       <div>
-        <h1>Dashboard</h1>
         <Reviews />
       </div>
     </DashboardWrapper>
