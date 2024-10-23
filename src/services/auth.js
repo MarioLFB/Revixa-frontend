@@ -11,6 +11,16 @@ export async function loginUser(credentials) {
   }
 }
 
+export async function registerUser(credentials) {
+  try {
+    const response = await api.post('/api/user/register/', credentials);
+    return response.data;
+  } catch (error) {
+    console.error('Register error:', error);
+    throw error;
+  }
+}
+
 
 export async function refreshAccessToken(refreshToken) {
     try {
