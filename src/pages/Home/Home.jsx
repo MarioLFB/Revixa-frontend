@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Carousel from "react-bootstrap/Carousel";
 import { getAllReviews } from "../../services/reviews";
 import styled from "styled-components";
+import RegisterCTA from "../../components/RegisterCTA";
 
 const HomeWrapper = styled.div`
   padding: 50px 0;
@@ -99,6 +100,7 @@ function Home() {
           </Carousel>
         </CarouselContainer>
       )}
+    <RegisterCTA />
     </HomeWrapper>
   );
 }
