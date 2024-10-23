@@ -11,11 +11,12 @@ import Dashboard from '../Dashboard';
 
 function HomeWrapper() {
   return (
-    <Router> {/* Definindo o roteamento */}
+    <Router>
       <MyNavbar /> {/* Navbar */}
       <Routes>
         <Route path="/" element={<Home />} /> {/* Home Page */}
         <Route path="/login" element={<Login />} /> {/* Login Page */}
+        <Route path="/register" element={<Login />} /> {/* Register Page, reutilizando o Login */}
         <Route path="/reviews" element={<Reviews />} /> {/* Reviews Page */}
         <Route path="/reviews/:reviewId/posts" element={<ReviewPosts />} /> {/* Show Posts in Reviews Page */}
         <Route path="/dashboard" element={<Dashboard />} /> {/* Dashboard Page */}
