@@ -1,6 +1,6 @@
 import React, { createContext, useState, useEffect } from 'react';
 import jwt_decode from 'jwt-decode';
-import { loginUser } from '../services/auth';
+import { loginUser, registerUser } from '../services/auth';
 
 const AuthContext = createContext();
 
@@ -26,6 +26,17 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
+  const register = async (credentials) => {
+    try {
+      const data = await registerUser(credentials);
+      setAuthTokens(data);
+      setUser(jwt_decode(data.access));
+      localStorage.setItem('authTokens', JSON.stringify(data));
+    } catch (error) {
+      console.error('Register Error:', error);
+    }
+  };
+
   const logout = () => {
     setAuthTokens(null);
     setUser(null);
@@ -33,7 +44,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ authTokens, user, login, logout }}>
+    <AuthContext.Provider value={{ authTokens, user, login, register, logout }}>
       {children}
     </AuthContext.Provider>
   );
