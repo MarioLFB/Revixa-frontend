@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link, useLocation } from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
 import { Form } from "react-bootstrap";
 import styled, { keyframes } from "styled-components";
@@ -45,22 +45,32 @@ const Title = styled.h2`
 
 function Login() {
   const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  const { login } = useContext(AuthContext);
+  const { login, register } = useContext(AuthContext);
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const isRegister = location.pathname === "/register";
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setError("");
+
     try {
-      await login({ username, password });
-      navigate("/dashboard");
+      if (isRegister) {
+        await register({ username, email, password });
+        navigate("/dashboard");
+      } else {
+        await login({ username, password });
+        navigate("/dashboard");
+      }
     } catch (err) {
-      setError("Invalid username or password");
+      setError("Invalid credentials. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -70,7 +80,7 @@ function Login() {
     <LoginWrapper>
       <FormContainer>
         <Form onSubmit={handleSubmit}>
-          <Title className="mb-4">Login</Title>
+          <Title className="mb-4">{isRegister ? "Register" : "Login"}</Title>
           {error && <p style={{ color: "red" }}>{error}</p>}
 
           <Form.Group className="mb-3" controlId="formBasicUsername">
@@ -83,6 +93,18 @@ function Login() {
             />
           </Form.Group>
 
+          {isRegister && (
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Control
+                type="email"
+                placeholder="Enter email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                disabled={loading}
+              />
+            </Form.Group>
+          )}
+
           <Form.Group className="mb-3" controlId="formBasicPassword">
             <Form.Control
               type="password"
@@ -94,8 +116,16 @@ function Login() {
           </Form.Group>
 
           <PrimaryButton as="button" type="submit" disabled={loading}>
-            {loading ? "Logging in..." : "Enter"}
+            {loading ? "Processing..." : isRegister ? "Register" : "Login"}
           </PrimaryButton>
+
+          <div className="mt-3">
+            {isRegister ? (
+              <Link to="/login">Already have an account? Login</Link>
+            ) : (
+              <Link to="/register">Don't have an account? Register</Link>
+            )}
+          </div>
         </Form>
       </FormContainer>
     </LoginWrapper>
