@@ -22,7 +22,7 @@ const HeaderContainer = styled.div`
 const CarouselContainer = styled.div`
   max-width: 1200px;
   margin: 40px auto 0;
-  padding: 40px;
+  padding: 30px;
   background: linear-gradient(270deg, #ffdb73, #fe824d, #ff6347, #ffa07a);
   border-radius: 15px;
   color: #fff;
@@ -44,6 +44,7 @@ const Title = styled.h1`
 const Description = styled.p`
   font-size: 1.2rem;
   color: #333;
+  padding: 0 40px;
 `;
 
 function Home() {
