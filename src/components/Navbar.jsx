@@ -29,10 +29,10 @@ function MyNavbar() {
             Revixa
           </Logo>
         </Navbar.Brand>
-        <div className="ms-auto">
+        <div className="ms-auto me-5">
           {user ? (
             <>
-              <span className="navbar-text me-3">Hello, {user.username}</span>
+              <span className="navbar-text me-3 p-5">Hello, {user.username}</span>
               <PrimaryButton as="button" onClick={logout}>
                 Logout
               </PrimaryButton>
