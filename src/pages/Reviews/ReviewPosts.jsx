@@ -8,7 +8,6 @@ import {
   deletePost,
 } from "../../services/posts";
 import Post from "../../components/Post";
-import PrimaryButton from "../../components/PrimaryButton";
 import styled from "styled-components";
 
 const SubmitButton = styled.button`
@@ -122,9 +121,9 @@ function ReviewPosts() {
 
   return (
     <div>
-      <PrimaryButton onClick={() => navigate("/reviews")}>
+      <SubmitButton onClick={() => navigate("/reviews")}>
         Back to Reviews
-      </PrimaryButton>
+      </SubmitButton>
 
       <form onSubmit={handleSubmitPost}>
         <h2>Got something to share? Let's hear it!</h2>
@@ -154,20 +153,22 @@ function ReviewPosts() {
                     onChange={(e) => setEditPostContent(e.target.value)}
                     rows="4"
                   />
-                  <button type="submit">Save</button>
-                  <button type="button" onClick={() => setEditPostId(null)}>
+                  <SubmitButton type="submit">Save</SubmitButton>
+                  <SubmitButton type="button" onClick={() => setEditPostId(null)}>
                     Cancel
-                  </button>
+                  </SubmitButton>
                 </form>
               ) : (
                 <>
                   <Post post={post} />
                   {user.username === post.author && (
                     <div>
-                      <button onClick={() => handleEditPost(post)}>Edit</button>
-                      <button onClick={() => handleDelete(post.id)}>
+                      <SubmitButton onClick={() => handleEditPost(post)}>
+                        Edit
+                      </SubmitButton>
+                      <SubmitButton onClick={() => handleDelete(post.id)}>
                         Delete
-                      </button>
+                      </SubmitButton>
                     </div>
                   )}
                 </>
