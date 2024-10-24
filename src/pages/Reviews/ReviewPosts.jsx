@@ -111,7 +111,7 @@ function ReviewPosts() {
       </PrimaryButton>
 
       <form onSubmit={handleSubmitPost}>
-        <h2>Create a new post</h2>
+        <h2>Got something to share? Let's hear it!</h2>
         {error && <p style={{ color: "red" }}>{error}</p>}
         <textarea
           value={newPostContent}
