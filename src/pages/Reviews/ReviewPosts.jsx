@@ -9,6 +9,22 @@ import {
 } from "../../services/posts";
 import Post from "../../components/Post";
 import PrimaryButton from "../../components/PrimaryButton";
+import styled from "styled-components";
+
+const SubmitButton = styled.button`
+  background-color: #ff7f50;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #e67345;
+    color: white;
+  }
+`;
 
 function ReviewPosts() {
   const { user } = useContext(AuthContext);
@@ -119,7 +135,7 @@ function ReviewPosts() {
           placeholder="Write your post here"
           rows="4"
         />
-        <button type="submit">Submit Post</button>
+        <SubmitButton type="submit">Submit Post</SubmitButton>
       </form>
 
       {posts.length > 0 ? (
