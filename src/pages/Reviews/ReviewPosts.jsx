@@ -8,7 +8,7 @@ import {
   deletePost,
 } from "../../services/posts";
 import Post from "../../components/Post";
-import GlobalStyle from "../../components/GlobalStyles";
+import PrimaryButton from "../../components/PrimaryButton";
 
 function ReviewPosts() {
   const { user } = useContext(AuthContext);
@@ -106,9 +106,9 @@ function ReviewPosts() {
 
   return (
     <div>
-      <GlobalStyle />
-      <h1>Posts for Review {reviewId}</h1>
-      <button onClick={() => navigate("/reviews")}>Back to Reviews</button>
+      <PrimaryButton onClick={() => navigate("/reviews")}>
+        Back to Reviews
+      </PrimaryButton>
 
       <form onSubmit={handleSubmitPost}>
         <h2>Create a new post</h2>
