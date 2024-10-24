@@ -15,6 +15,7 @@ const Logo = styled(Link)`
   color: transparent;
   text-decoration: none;
   font-family: "Pacifico", sans-serif;
+  padding: 5rem;
 `;
 
 function MyNavbar() {
