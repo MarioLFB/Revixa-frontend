@@ -43,6 +43,12 @@ const Title = styled.h2`
   color: #333;
 `;
 
+const StyledLink = styled(Link)`
+  color: #333;
+  font-family: 'Pacifico', sans-serif;
+  text-decoration: none;
+`;
+
 function Login() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -119,11 +125,11 @@ function Login() {
             {loading ? "Processing..." : isRegister ? "Register" : "Login"}
           </PrimaryButton>
 
-          <div className="mt-3">
+          <div className="mt-4">
             {isRegister ? (
-              <Link to="/login">Already have an account? Login</Link>
+              <StyledLink to="/login">Already have an account? Login</StyledLink>
             ) : (
-              <Link to="/register">Don't have an account? Register</Link>
+              <StyledLink to="/register">Don't have an account? Register</StyledLink>
             )}
           </div>
         </Form>
