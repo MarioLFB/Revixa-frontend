@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Carousel from "react-bootstrap/Carousel";
+import { useNavigate } from "react-router-dom";
 import { getAllReviews } from "../../services/reviews";
 import styled from "styled-components";
 import RegisterCTA from "../../components/RegisterCTA";
+import AuthContext from "../../context/AuthContext";
 
 const HomeWrapper = styled.div`
   padding: 50px 0;
@@ -47,9 +49,44 @@ const Description = styled.p`
   padding: 0 40px;
 `;
 
+const MessageWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+`;
+
+const LoginMessageContainer = styled.div`
+  background-color: #ffe3c0;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  font-size: 1rem;
+  color: #333;
+  text-align: center;
+  max-width: 400px;
+`;
+
+const StyledButton = styled.button`
+  background-color: #ff7f50;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  margin-top: 15px;
+
+  &:hover {
+    background-color: #e67345;
+  }
+`;
+
 function Home() {
+  const { user } = useContext(AuthContext);
   const [reviews, setReviews] = useState([]);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchReviews = async () => {
@@ -101,7 +138,25 @@ function Home() {
           </Carousel>
         </CarouselContainer>
       )}
-    <RegisterCTA />
+
+      {user ? (
+        <MessageWrapper>
+          <StyledButton onClick={() => navigate('/dashboard')}>
+            Go to Dashboard
+          </StyledButton>
+        </MessageWrapper>
+      ) : (
+        <MessageWrapper>
+          <LoginMessageContainer>
+            <p>Please log in to access the posts.</p>
+            <StyledButton onClick={() => navigate('/login')}>
+              Log In
+            </StyledButton>
+          </LoginMessageContainer>
+        </MessageWrapper>
+      )}
+
+      <RegisterCTA />
     </HomeWrapper>
   );
 }
