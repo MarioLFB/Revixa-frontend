@@ -169,7 +169,7 @@ function ReviewPosts() {
 
   return (
     <ReviewPostsWrapper>
-      <SubmitButton onClick={() => navigate("/reviews")}>
+      <SubmitButton onClick={() => navigate("/dashboard")}>
         Back to Reviews
       </SubmitButton>
 
