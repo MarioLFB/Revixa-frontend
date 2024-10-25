@@ -4,8 +4,8 @@ import AuthContext from '../context/AuthContext';
 import styled from 'styled-components';
 
 const LikeButtonStyled = styled.button`
-  background-color: ${props => (props.isLiked ? '#ff6347' : '#f0f0f0')};
-  color: ${props => (props.isLiked ? 'white' : '#333')};
+  background-color: ${props => (props.$isLiked ? '#ff6347' : '#f0f0f0')};
+  color: ${props => (props.$isLiked ? 'white' : '#333')};
   padding: 15px;
   border-radius: 50%;
   border: none;
@@ -20,7 +20,7 @@ const LikeButtonStyled = styled.button`
   font-family: 'Pacifico', sans-serif;
 
   &:hover {
-    background-color: ${props => (props.isLiked ? '#e67345' : '#dcdcdc')};
+    background-color: ${props => (props.$isLiked ? '#e67345' : '#dcdcdc')};
   }
 
   &:disabled {
@@ -57,7 +57,7 @@ function LikeButton({ postId, isLiked, onLikeToggle }) {
   };
 
   return (
-    <LikeButtonStyled onClick={handleClick} disabled={loading} isLiked={isLiked}>
+    <LikeButtonStyled onClick={handleClick} disabled={loading} $isLiked={isLiked}>
       {isLiked ? 'Unlike' : 'Like'}
     </LikeButtonStyled>
   );
