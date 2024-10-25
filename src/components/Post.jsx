@@ -8,18 +8,18 @@ const PostWrapper = styled.div`
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+`;
+
+const LikeContainer = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 10px;
 `;
 
 const LikesCount = styled.span`
   font-size: 1rem;
   color: #333;
   font-family: 'Pacifico', sans-serif;
-  display: flex;
-  align-items: center;
-  margin-left: 15px;
 `;
 
 function Post({ post }) {
@@ -34,14 +34,14 @@ function Post({ post }) {
   return (
     <PostWrapper>
       <div>{post.content}</div>
-      <div>
+      <LikeContainer>
         <LikeButton
           postId={post.id}
           isLiked={isLiked}
           onLikeToggle={handleLikeToggle}
         />
         <LikesCount>{likesCount} likes</LikesCount>
-      </div>
+      </LikeContainer>
     </PostWrapper>
   );
 }
