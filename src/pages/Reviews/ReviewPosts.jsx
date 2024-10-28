@@ -9,6 +9,7 @@ import {
 } from "../../services/posts";
 import Post from "../../components/Post";
 import styled from "styled-components";
+import ReviewContent from "../../components/ReviewContent";
 
 
 const SubmitButton = styled.button`
@@ -172,6 +173,8 @@ function ReviewPosts() {
       <SubmitButton onClick={() => navigate("/dashboard")}>
         Back to Reviews
       </SubmitButton>
+
+      <ReviewContent />
 
       <FormWrapper onSubmit={handleSubmitPost}>
         <Title>Got something to share? Let's hear it!</Title>
