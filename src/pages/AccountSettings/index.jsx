@@ -3,6 +3,7 @@ import AuthContext from "../../context/AuthContext";
 import { getUserProfile, updateEmail, updatePassword } from "../../services/user";
 import styled from "styled-components";
 
+
 const Container = styled.div`
   max-width: 600px;
   margin: 0 auto;
@@ -82,6 +83,10 @@ function AccountSettings() {
     fetchUserData();
   }, []);
 
+  if (!user) {
+    return <p>You need to be logged in to access this page.</p>;
+  }
+
   const handleEmailUpdate = async (e) => {
     e.preventDefault();
     setEmailError("");
@@ -116,10 +121,6 @@ function AccountSettings() {
       setPasswordError("Failed to update password.");
     }
   };
-
-  if (!user) {
-    return <p>You need to be logged in to access this page.</p>;
-  }
 
   return (
     <Container>
