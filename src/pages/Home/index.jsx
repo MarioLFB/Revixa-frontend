@@ -7,6 +7,7 @@ import ReviewPosts from '../Reviews/ReviewPosts';
 import MyNavbar from '../../components/Navbar';
 import Dashboard from '../Dashboard';
 import Footer from '../../components/Footer';
+import AccountSettings from '../AccountSettings';
 
 
 
@@ -21,6 +22,7 @@ function HomeWrapper() {
         <Route path="/reviews" element={<Reviews />} /> {/* Reviews Page */}
         <Route path="/reviews/:reviewId/posts" element={<ReviewPosts />} /> {/* Show Posts in Reviews Page */}
         <Route path="/dashboard" element={<Dashboard />} /> {/* Dashboard Page */}
+        <Route path="/account-settings" element={<AccountSettings />} /> {/* Account Settings Page */}
       </Routes>
       <Footer /> {/* Footer */}
     </Router>
