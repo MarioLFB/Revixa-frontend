@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import AuthContext from "../../context/AuthContext";
-import { getUserProfile, updateEmail } from "../../services/user";
+import { getUserProfile, updateEmail, updatePassword } from "../../services/user";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -61,8 +61,12 @@ function AccountSettings() {
   const { user } = useContext(AuthContext);
   const [userData, setUserData] = useState(null);
   const [email, setEmail] = useState("");
+  const [currentPassword, setCurrentPassword] = useState("");
+  const [newPassword, setNewPassword] = useState("");
   const [emailError, setEmailError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
   const [emailSuccess, setEmailSuccess] = useState("");
+  const [passwordSuccess, setPasswordSuccess] = useState("");
 
   useEffect(() => {
     const fetchUserData = async () => {
@@ -89,6 +93,27 @@ function AccountSettings() {
     } catch (error) {
       console.error("Error updating email:", error);
       setEmailError("Failed to update email.");
+    }
+  };
+
+  const handlePasswordUpdate = async (e) => {
+    e.preventDefault();
+    setPasswordError("");
+    setPasswordSuccess("");
+
+    if (newPassword.length < 6) {
+      setPasswordError("The new password must be at least 6 characters long.");
+      return;
+    }
+
+    try {
+      await updatePassword(currentPassword, newPassword);
+      setPasswordSuccess("Password updated successfully!");
+      setCurrentPassword("");
+      setNewPassword("");
+    } catch (error) {
+      console.error("Error updating password:", error);
+      setPasswordError("Failed to update password.");
     }
   };
 
@@ -127,6 +152,29 @@ function AccountSettings() {
           required
         />
         <SubmitButton type="submit">Update Email</SubmitButton>
+      </Form>
+
+      <Form onSubmit={handlePasswordUpdate}>
+        <h2>Update Password</h2>
+        {passwordError && <p style={{ color: "red" }}>{passwordError}</p>}
+        {passwordSuccess && <p style={{ color: "green" }}>{passwordSuccess}</p>}
+        <Label htmlFor="currentPassword">Current Password:</Label>
+        <Input
+          type="password"
+          id="currentPassword"
+          value={currentPassword}
+          onChange={(e) => setCurrentPassword(e.target.value)}
+          required
+        />
+        <Label htmlFor="newPassword">New Password:</Label>
+        <Input
+          type="password"
+          id="newPassword"
+          value={newPassword}
+          onChange={(e) => setNewPassword(e.target.value)}
+          required
+        />
+        <SubmitButton type="submit">Update Password</SubmitButton>
       </Form>
     </Container>
   );
