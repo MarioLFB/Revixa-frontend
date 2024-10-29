@@ -6,6 +6,7 @@ import AuthContext from "../context/AuthContext";
 import styled from "styled-components";
 import PrimaryButton from "./PrimaryButton";
 
+
 const Logo = styled(Link)`
   font-size: 3rem;
   font-weight: bold;
@@ -32,7 +33,14 @@ function MyNavbar() {
         <div className="ms-auto me-5">
           {user ? (
             <>
-              <span className="navbar-text me-3 p-5">Hello, {user.username}</span>
+              <span className="navbar-text me-3 p-5">
+                Hello, {user.username}
+              </span>
+
+              <Link to="/account-settings" className="me-3 nav-link">
+                User Account
+              </Link>
+
               <PrimaryButton as="button" onClick={logout}>
                 Logout
               </PrimaryButton>
