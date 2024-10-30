@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { useNavigate, Link, useLocation } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
 import { Form } from "react-bootstrap";
 import styled, { keyframes } from "styled-components";
@@ -18,7 +18,7 @@ const moveGradient = keyframes`
   }
 `;
 
-const LoginWrapper = styled.div`
+const RegisterWrapper = styled.div`
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -50,23 +50,21 @@ const StyledLink = styled(Link)`
   text-decoration: none;
 `;
 
-function Login() {
+function Register() {
   const [username, setUsername] = useState("");
-  // Removed the email state, as it is not needed for login
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
-  // Removed the error state, using toast for error messages instead
 
-  const { login } = useContext(AuthContext); // Removed register from context
+  const { register } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
 
-    // Check if fields are filled
-    if (!username || !password) {
-      toast.error("Please enter username and password.", {
+    if (!username || !email || !password) {
+      toast.error("Please fill in all fields.", {
         position: "top-center",
         autoClose: 5000,
       });
@@ -75,14 +73,14 @@ function Login() {
     }
 
     try {
-      await login({ username, password });
+      await register({ username, email, password });
       navigate("/dashboard");
     } catch (err) {
       console.error('Error in handleSubmit:', err);
 
-      let errorMessage = "Invalid credentials. Please try again.";
-      if (err.response && err.response.data && err.response.data.detail) {
-        errorMessage = err.response.data.detail;
+      let errorMessage = "Registration error. Please try again.";
+      if (err.response && err.response.data) {
+        errorMessage = JSON.stringify(err.response.data);
       } else if (err.message) {
         errorMessage = err.message;
       }
@@ -97,10 +95,10 @@ function Login() {
   };
 
   return (
-    <LoginWrapper>
+    <RegisterWrapper>
       <FormContainer>
         <Form onSubmit={handleSubmit}>
-          <Title className="mb-4">Login</Title>
+          <Title className="mb-4">Register</Title>
 
           <Form.Group className="mb-3" controlId="formBasicUsername">
             <Form.Control
@@ -108,6 +106,16 @@ function Login() {
               placeholder="Username"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
+              disabled={loading}
+            />
+          </Form.Group>
+
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Control
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               disabled={loading}
             />
           </Form.Group>
@@ -123,16 +131,16 @@ function Login() {
           </Form.Group>
 
           <PrimaryButton as="button" type="submit" disabled={loading}>
-            {loading ? "Processing..." : "Login"}
+            {loading ? "Processing..." : "Register"}
           </PrimaryButton>
 
           <div className="mt-4">
-            <StyledLink to="/register">Don't have an account? Register</StyledLink>
+            <StyledLink to="/login">Already have an account? Log in</StyledLink>
           </div>
         </Form>
       </FormContainer>
-    </LoginWrapper>
+    </RegisterWrapper>
   );
 }
 
-export default Login;
+export default Register;
