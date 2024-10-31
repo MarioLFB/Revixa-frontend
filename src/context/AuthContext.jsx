@@ -35,6 +35,7 @@ export const AuthProvider = ({ children }) => {
       localStorage.setItem('authTokens', JSON.stringify(data));
     } catch (error) {
       console.error('Register Error:', error);
+      throw error;
     }
   };
 
