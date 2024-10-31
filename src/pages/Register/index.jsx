@@ -46,7 +46,7 @@ const Title = styled.h2`
 
 const StyledLink = styled(Link)`
   color: #333;
-  font-family: 'Pacifico', sans-serif;
+  font-family: "Pacifico", sans-serif;
   text-decoration: none;
 `;
 
@@ -76,11 +76,18 @@ function Register() {
       await register({ username, email, password });
       navigate("/dashboard");
     } catch (err) {
-      console.error('Error in handleSubmit:', err);
+      console.error("Error in handleSubmit:", err);
 
       let errorMessage = "Registration error. Please try again.";
+
       if (err.response && err.response.data) {
-        errorMessage = JSON.stringify(err.response.data);
+        const errorData = err.response.data;
+
+        if (errorData.username) {
+          errorMessage = `Username error: ${errorData.username[0]}`;
+        } else if (errorData.email) {
+          errorMessage = `Email error: ${errorData.email[0]}`;
+        }
       } else if (err.message) {
         errorMessage = err.message;
       }
