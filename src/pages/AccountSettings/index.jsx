@@ -1,8 +1,14 @@
 import React, { useState, useEffect, useContext } from "react";
 import AuthContext from "../../context/AuthContext";
-import { getUserProfile, updateEmail, updatePassword } from "../../services/user";
+import {
+  getUserProfile,
+  updateEmail,
+  updatePassword,
+} from "../../services/user";
 import styled from "styled-components";
 import { toast } from "react-toastify";
+import Modal from "react-bootstrap/Modal";
+import Button from "react-bootstrap/Button";
 
 const Container = styled.div`
   max-width: 600px;
@@ -64,6 +70,7 @@ function AccountSettings() {
   const [email, setEmail] = useState("");
   const [currentPassword, setCurrentPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
+  const [showPasswordModal, setShowPasswordModal] = useState(false);
 
   useEffect(() => {
     const fetchUserData = async () => {
@@ -100,9 +107,8 @@ function AccountSettings() {
     }
   };
 
-  const handlePasswordUpdate = async (e) => {
+  const handlePasswordUpdate = (e) => {
     e.preventDefault();
-
     if (newPassword.length < 6) {
       toast.error("The new password must be at least 6 characters long.", {
         position: "top-center",
@@ -110,7 +116,11 @@ function AccountSettings() {
       });
       return;
     }
+    setShowPasswordModal(true);
+  };
 
+  const handlePasswordUpdateConfirm = async () => {
+    setShowPasswordModal(false);
     try {
       await updatePassword(currentPassword, newPassword);
       toast.success("Password updated successfully!", {
@@ -179,6 +189,28 @@ function AccountSettings() {
         />
         <SubmitButton type="submit">Update Password</SubmitButton>
       </Form>
+
+      <Modal
+        show={showPasswordModal}
+        onHide={() => setShowPasswordModal(false)}
+        centered
+      >
+        <Modal.Header closeButton>
+          <Modal.Title>Confirm Password Update</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Are you sure you want to update your password?</Modal.Body>
+        <Modal.Footer>
+          <Button
+            variant="secondary"
+            onClick={() => setShowPasswordModal(false)}
+          >
+            Cancel
+          </Button>
+          <Button variant="danger" onClick={handlePasswordUpdateConfirm}>
+            Confirm
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </Container>
   );
 }
