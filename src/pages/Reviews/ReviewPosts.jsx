@@ -233,7 +233,7 @@ function ReviewPosts() {
                 <Post post={post} />
                 {user.username === post.author && (
                   <div>
-                    <SubmitButton onClick={() => handleEditPost(post)}>
+                    <SubmitButton className="me-2" onClick={() => handleEditPost(post)}>
                       Edit
                     </SubmitButton>
                     <SubmitButton onClick={() => handleDelete(post.id)}>
