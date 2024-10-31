@@ -20,6 +20,22 @@ const Logo = styled(Link)`
   padding: 5rem;
 `;
 
+const CenteredContainer = styled.div`
+  background-color: #ff7f50; /* Cor laranja sólida */
+  padding: 10px 20px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const CenteredLink = styled(Link)`
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+`;
+
 function MyNavbar() {
   const { user, logout } = useContext(AuthContext);
   const [showLogoutModal, setShowLogoutModal] = useState(false);
@@ -27,6 +43,7 @@ function MyNavbar() {
 
   const handleShowLogoutModal = () => setShowLogoutModal(true);
   const handleCloseLogoutModal = () => setShowLogoutModal(false);
+
   const confirmLogout = () => {
     logout();
     setShowLogoutModal(false);
@@ -36,23 +53,25 @@ function MyNavbar() {
   return (
     <>
       <Navbar expand="lg" className="bg-white">
-        <Container fluid>
+        <Container fluid className="justify-content-between">
           <Navbar.Brand>
             <Logo to="/" className="navbar-brand">
               Revixa
             </Logo>
           </Navbar.Brand>
-          <div className="ms-auto me-5">
+
+          {user && (
+            <CenteredContainer>
+              <CenteredLink to="/account-settings">User Account</CenteredLink>
+            </CenteredContainer>
+          )}
+
+          <div className="d-flex align-items-center">
             {user ? (
               <>
                 <span className="navbar-text me-3 p-5">
                   Hello, {user.username}
                 </span>
-
-                <Link to="/account-settings" className="me-3 nav-link">
-                  User Account
-                </Link>
-
                 <PrimaryButton as="button" onClick={handleShowLogoutModal}>
                   Logout
                 </PrimaryButton>
@@ -63,13 +82,12 @@ function MyNavbar() {
           </div>
         </Container>
       </Navbar>
+
       <Modal show={showLogoutModal} onHide={handleCloseLogoutModal} centered>
         <Modal.Header closeButton>
           <Modal.Title>Confirm Logout</Modal.Title>
         </Modal.Header>
-        <Modal.Body>
-          Are you sure you want to logout?
-        </Modal.Body>
+        <Modal.Body>Are you sure you want to logout?</Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleCloseLogoutModal}>
             Cancel
