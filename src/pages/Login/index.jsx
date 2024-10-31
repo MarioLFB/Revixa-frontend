@@ -1,5 +1,5 @@
-import React, { useState, useContext } from "react";
-import { useNavigate, Link, useLocation } from "react-router-dom";
+import React, { useState, useContext, useEffect } from "react";
+import { useNavigate, Link } from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
 import { Form } from "react-bootstrap";
 import styled, { keyframes } from "styled-components";
@@ -46,25 +46,38 @@ const Title = styled.h2`
 
 const StyledLink = styled(Link)`
   color: #333;
-  font-family: 'Pacifico', sans-serif;
+  font-family: "Pacifico", sans-serif;
   text-decoration: none;
 `;
 
 function Login() {
   const [username, setUsername] = useState("");
-  // Removed the email state, as it is not needed for login
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
-  // Removed the error state, using toast for error messages instead
 
-  const { login } = useContext(AuthContext); // Removed register from context
+  const { login } = useContext(AuthContext);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const handleAuthError = () => {
+      toast.error("Session expired, please login again.", {
+        position: "top-center",
+        autoClose: 5000,
+      });
+      navigate("/login");
+    };
+
+    window.addEventListener("authError", handleAuthError);
+
+    return () => {
+      window.removeEventListener("authError", handleAuthError);
+    };
+  }, [navigate]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
 
-    // Check if fields are filled
     if (!username || !password) {
       toast.error("Please enter username and password.", {
         position: "top-center",
@@ -78,8 +91,6 @@ function Login() {
       await login({ username, password });
       navigate("/dashboard");
     } catch (err) {
-      console.error('Error in handleSubmit:', err);
-
       let errorMessage = "Invalid credentials. Please try again.";
       if (err.response && err.response.data && err.response.data.detail) {
         errorMessage = err.response.data.detail;
@@ -91,7 +102,6 @@ function Login() {
         position: "top-center",
         autoClose: 5000,
       });
-    } finally {
       setLoading(false);
     }
   };
@@ -101,7 +111,6 @@ function Login() {
       <FormContainer>
         <Form onSubmit={handleSubmit}>
           <Title className="mb-4">Login</Title>
-
           <Form.Group className="mb-3" controlId="formBasicUsername">
             <Form.Control
               type="text"
@@ -111,7 +120,6 @@ function Login() {
               disabled={loading}
             />
           </Form.Group>
-
           <Form.Group className="mb-3" controlId="formBasicPassword">
             <Form.Control
               type="password"
@@ -121,13 +129,13 @@ function Login() {
               disabled={loading}
             />
           </Form.Group>
-
           <PrimaryButton as="button" type="submit" disabled={loading}>
             {loading ? "Processing..." : "Login"}
           </PrimaryButton>
-
           <div className="mt-4">
-            <StyledLink to="/register">Don't have an account? Register</StyledLink>
+            <StyledLink to="/register">
+              Don't have an account? Register
+            </StyledLink>
           </div>
         </Form>
       </FormContainer>
