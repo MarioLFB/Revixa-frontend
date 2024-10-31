@@ -1,6 +1,6 @@
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import AuthContext from "../context/AuthContext";
 import styled from "styled-components";
@@ -23,12 +23,14 @@ const Logo = styled(Link)`
 function MyNavbar() {
   const { user, logout } = useContext(AuthContext);
   const [showLogoutModal, setShowLogoutModal] = useState(false);
+  const navigate = useNavigate();
 
   const handleShowLogoutModal = () => setShowLogoutModal(true);
   const handleCloseLogoutModal = () => setShowLogoutModal(false);
   const confirmLogout = () => {
     logout();
     setShowLogoutModal(false);
+    navigate("/");
   };
 
   return (
