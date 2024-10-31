@@ -10,7 +10,8 @@ import {
 import Post from "../../components/Post";
 import styled from "styled-components";
 import ReviewContent from "../../components/ReviewContent";
-
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const SubmitButton = styled.button`
   background-color: #ff7f50;
@@ -55,7 +56,7 @@ const TextArea = styled.textarea`
 `;
 
 const Title = styled.h2`
-  font-family: 'Pacifico', sans-serif;
+  font-family: "Pacifico", sans-serif;
   color: #ff6347;
   text-align: center;
   margin-bottom: 20px;
@@ -104,7 +105,10 @@ function ReviewPosts() {
     e.preventDefault();
 
     if (!newPostContent.trim()) {
-      setError("Post content cannot be empty");
+      toast.error("Post content cannot be empty", {
+        position: "top-center",
+        autoClose: 5000,
+      });
       return;
     }
 
@@ -116,9 +120,16 @@ function ReviewPosts() {
       setPosts([...posts, newPost]);
       setNewPostContent("");
       setError("");
+      toast.success("Post submitted successfully!", {
+        position: "top-center",
+        autoClose: 3000,
+      });
     } catch (err) {
       console.error("Failed to create post:", err);
-      setError("Failed to create post");
+      toast.error("Failed to submit post", {
+        position: "top-center",
+        autoClose: 5000,
+      });
     }
   };
 
