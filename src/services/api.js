@@ -48,12 +48,10 @@ api.interceptors.response.use(
         } catch (err) {
           console.error('Erro ao atualizar o token:', err);
           localStorage.removeItem('authTokens');
-          window.location.href = '/login';
           return Promise.reject(err);
         }
       } else {
         localStorage.removeItem('authTokens');
-        window.location.href = '/login';
       }
     }
     return Promise.reject(error);
