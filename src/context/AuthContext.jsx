@@ -29,10 +29,8 @@ export const AuthProvider = ({ children }) => {
 
   const register = async (credentials) => {
     try {
-      const data = await registerUser(credentials);
-      setAuthTokens(data);
-      setUser(jwt_decode(data.access));
-      localStorage.setItem('authTokens', JSON.stringify(data));
+      await registerUser(credentials);
+      await login(credentials);
     } catch (error) {
       console.error('Register Error:', error);
       throw error;
