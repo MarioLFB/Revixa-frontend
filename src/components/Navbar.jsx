@@ -1,11 +1,12 @@
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import { Link } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import AuthContext from "../context/AuthContext";
 import styled from "styled-components";
 import PrimaryButton from "./PrimaryButton";
-
+import Modal from "react-bootstrap/Modal";
+import Button from "react-bootstrap/Button";
 
 const Logo = styled(Link)`
   font-size: 3rem;
@@ -21,36 +22,62 @@ const Logo = styled(Link)`
 
 function MyNavbar() {
   const { user, logout } = useContext(AuthContext);
+  const [showLogoutModal, setShowLogoutModal] = useState(false);
+
+  const handleShowLogoutModal = () => setShowLogoutModal(true);
+  const handleCloseLogoutModal = () => setShowLogoutModal(false);
+  const confirmLogout = () => {
+    logout();
+    setShowLogoutModal(false);
+  };
 
   return (
-    <Navbar expand="lg" className="bg-white">
-      <Container fluid>
-        <Navbar.Brand>
-          <Logo to="/" className="navbar-brand">
-            Revixa
-          </Logo>
-        </Navbar.Brand>
-        <div className="ms-auto me-5">
-          {user ? (
-            <>
-              <span className="navbar-text me-3 p-5">
-                Hello, {user.username}
-              </span>
+    <>
+      <Navbar expand="lg" className="bg-white">
+        <Container fluid>
+          <Navbar.Brand>
+            <Logo to="/" className="navbar-brand">
+              Revixa
+            </Logo>
+          </Navbar.Brand>
+          <div className="ms-auto me-5">
+            {user ? (
+              <>
+                <span className="navbar-text me-3 p-5">
+                  Hello, {user.username}
+                </span>
 
-              <Link to="/account-settings" className="me-3 nav-link">
-                User Account
-              </Link>
+                <Link to="/account-settings" className="me-3 nav-link">
+                  User Account
+                </Link>
 
-              <PrimaryButton as="button" onClick={logout}>
-                Logout
-              </PrimaryButton>
-            </>
-          ) : (
-            <PrimaryButton to="/login">Login</PrimaryButton>
-          )}
-        </div>
-      </Container>
-    </Navbar>
+                <PrimaryButton as="button" onClick={handleShowLogoutModal}>
+                  Logout
+                </PrimaryButton>
+              </>
+            ) : (
+              <PrimaryButton to="/login">Login</PrimaryButton>
+            )}
+          </div>
+        </Container>
+      </Navbar>
+      <Modal show={showLogoutModal} onHide={handleCloseLogoutModal} centered>
+        <Modal.Header closeButton>
+          <Modal.Title>Confirm Logout</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          Are you sure you want to logout?
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleCloseLogoutModal}>
+            Cancel
+          </Button>
+          <Button variant="danger" onClick={confirmLogout}>
+            Confirm
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    </>
   );
 }
 
