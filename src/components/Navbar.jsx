@@ -21,7 +21,7 @@ const Logo = styled(Link)`
 `;
 
 const CenteredContainer = styled.div`
-  background-color: #ff7f50; /* Cor laranja sólida */
+  background-color: #ff7f50;
   padding: 10px 20px;
   border-radius: 20px;
   display: flex;
