@@ -74,7 +74,11 @@ function Register() {
 
     try {
       await register({ username, email, password });
-      navigate("/dashboard");
+      toast.success("Registration successful! Redirecting...", {
+        position: "top-center",
+        autoClose: false,
+      });
+        navigate("/dashboard");
     } catch (err) {
       console.error("Error in handleSubmit:", err);
 
