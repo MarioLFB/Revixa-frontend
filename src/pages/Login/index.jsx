@@ -89,6 +89,10 @@ function Login() {
 
     try {
       await login({ username, password });
+      toast.success("Login successful!", {
+        position: "top-center",
+        autoClose: false,
+      });
       navigate("/dashboard");
     } catch (err) {
       let errorMessage = "Invalid credentials. Please try again.";
@@ -102,6 +106,7 @@ function Login() {
         position: "top-center",
         autoClose: 5000,
       });
+    } finally {
       setLoading(false);
     }
   };
