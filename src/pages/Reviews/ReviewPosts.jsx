@@ -11,6 +11,8 @@ import Post from "../../components/Post";
 import styled from "styled-components";
 import ReviewContent from "../../components/ReviewContent";
 import { toast } from "react-toastify";
+import Modal from "react-bootstrap/Modal";
+import Button from "react-bootstrap/Button";
 
 const SubmitButton = styled.button`
   background-color: #ff7f50;
@@ -83,6 +85,8 @@ function ReviewPosts() {
   const [editPostId, setEditPostId] = useState(null);
   const [editPostContent, setEditPostContent] = useState("");
   const [error, setError] = useState("");
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [postToDelete, setPostToDelete] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -171,12 +175,28 @@ function ReviewPosts() {
     }
   };
 
-  const handleDelete = async (postId) => {
+  const handleDeleteClick = (postId) => {
+    setPostToDelete(postId);
+    setShowDeleteModal(true);
+  };
+
+  const handleDeleteConfirm = async () => {
     try {
-      await deletePost(postId);
-      setPosts(posts.filter((post) => post.id !== postId));
+      await deletePost(postToDelete);
+      setPosts(posts.filter((post) => post.id !== postToDelete));
+      toast.success("Post deleted successfully!", {
+        position: "top-center",
+        autoClose: 3000,
+      });
     } catch (error) {
       console.error("Failed to delete post:", error);
+      toast.error("Failed to delete post", {
+        position: "top-center",
+        autoClose: 5000,
+      });
+    } finally {
+      setShowDeleteModal(false);
+      setPostToDelete(null);
     }
   };
 
@@ -208,6 +228,21 @@ function ReviewPosts() {
         <SubmitButton type="submit">Submit Post</SubmitButton>
       </FormWrapper>
 
+      <Modal show={showDeleteModal} onHide={() => setShowDeleteModal(false)} centered>
+        <Modal.Header closeButton>
+          <Modal.Title>Confirm Delete</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Are you sure you want to delete this post?</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={() => setShowDeleteModal(false)}>
+            Cancel
+          </Button>
+          <Button variant="danger" onClick={handleDeleteConfirm}>
+            Confirm
+          </Button>
+        </Modal.Footer>
+      </Modal>
+
       {posts.length > 0 ? (
         posts.map((post) => (
           <PostCard key={post.id}>
@@ -236,7 +271,7 @@ function ReviewPosts() {
                     <SubmitButton className="me-2" onClick={() => handleEditPost(post)}>
                       Edit
                     </SubmitButton>
-                    <SubmitButton onClick={() => handleDelete(post.id)}>
+                    <SubmitButton onClick={() => handleDeleteClick(post.id)}>
                       Delete
                     </SubmitButton>
                   </div>
