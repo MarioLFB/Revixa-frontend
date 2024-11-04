@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://127.0.0.1:8000/',
+  baseURL: 'https://revixa-2c64c0effe9d.herokuapp.com/',
 });
 
 // Interceptor to add the Authorization header to requests
@@ -33,7 +33,7 @@ api.interceptors.response.use(
 
       if (authTokens && authTokens.refresh) {
         try {
-          const response = await axios.post('http://127.0.0.1:8000/api/token/refresh/', {
+          const response = await axios.post('https://revixa-2c64c0effe9d.herokuapp.com/api/token/refresh/', {
             refresh: authTokens.refresh,
           });
 
