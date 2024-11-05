@@ -79,7 +79,7 @@ function AccountSettings() {
         setUserData(data);
         setEmail(data.email);
       } catch (error) {
-        console.error("Error fetching user data:", error);
+        // console.error("Error fetching user data:", error);
       }
     };
 
@@ -99,7 +99,7 @@ function AccountSettings() {
         autoClose: 3000,
       });
     } catch (error) {
-      console.error("Error updating email:", error);
+      // console.error("Error updating email:", error);
       toast.error("Failed to update email.", {
         position: "top-center",
         autoClose: 5000,
@@ -130,7 +130,7 @@ function AccountSettings() {
       setCurrentPassword("");
       setNewPassword("");
     } catch (error) {
-      console.error("Error updating password:", error);
+      // console.error("Error updating password:", error);
       toast.error("Failed to update password.", {
         position: "top-center",
         autoClose: 5000,

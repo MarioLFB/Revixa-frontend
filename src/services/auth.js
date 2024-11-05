@@ -6,7 +6,7 @@ export async function loginUser(credentials) {
     const response = await api.post('/api/token/', credentials);
     return response.data;
   } catch (error) {
-    console.error('Login error:', error);
+    // console.error('Login error:', error);
     throw error;
   }
 }
@@ -16,7 +16,7 @@ export async function registerUser(credentials) {
     const response = await api.post('/api/user/register/', credentials);
     return response.data;
   } catch (error) {
-    console.error('Register error:', error);
+    // console.error('Register error:', error);
     throw error;
   }
 }
@@ -27,7 +27,7 @@ export async function refreshAccessToken(refreshToken) {
       const response = await api.post('/api/token/refresh/', { refresh: refreshToken });
       return response.data;
     } catch (error) {
-      console.error('Refresh token error:', error);
+      // console.error('Refresh token error:', error);
       throw error;
     }
   }

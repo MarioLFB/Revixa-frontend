@@ -5,7 +5,7 @@ export async function likePost(postId) {
         const response = await api.post(`/social/posts/${postId}/like/`);
         return response.data;
     } catch (error) {
-        console.error('Error when liking post:', error);
+        // console.error('Error when liking post:', error);
         throw error;
     }
 }
@@ -15,7 +15,7 @@ export async function unlikePost(postId) {
         const response = await api.delete(`/social/posts/${postId}/like/`);
         return response.data;
     } catch (error) {
-        console.error('Error when unliking post:', error);
+        // console.error('Error when unliking post:', error);
         throw error;
     }
 }

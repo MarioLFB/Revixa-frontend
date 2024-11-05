@@ -95,7 +95,7 @@ function ReviewPosts() {
         const data = await getPostsByReviewId(reviewId);
         setPosts(data);
       } catch (error) {
-        console.error("Failed to fetch posts:", error);
+        // console.error("Failed to fetch posts:", error);
       } finally {
         setLoading(false);
       }
@@ -128,7 +128,7 @@ function ReviewPosts() {
         autoClose: 3000,
       });
     } catch (err) {
-      console.error("Failed to create post:", err);
+      // console.error("Failed to create post:", err);
       toast.error("Failed to submit post", {
         position: "top-center",
         autoClose: 5000,
@@ -167,7 +167,7 @@ function ReviewPosts() {
         autoClose: 3000,
       });
     } catch (error) {
-      console.error("Failed to update post:", error);
+      // console.error("Failed to update post:", error);
       toast.error("Failed to edit post", {
         position: "top-center",
         autoClose: 5000,
@@ -189,7 +189,7 @@ function ReviewPosts() {
         autoClose: 3000,
       });
     } catch (error) {
-      console.error("Failed to delete post:", error);
+      // console.error("Failed to delete post:", error);
       toast.error("Failed to delete post", {
         position: "top-center",
         autoClose: 5000,

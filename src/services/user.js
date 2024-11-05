@@ -5,7 +5,7 @@ export async function getUserProfile() {
     const response = await api.get('/api/user/profile/');
     return response.data;
   } catch (error) {
-    console.error('Error fetching user profile:', error);
+    // console.error('Error fetching user profile:', error);
     throw error;
   }
 }
@@ -15,7 +15,7 @@ export async function updateEmail(email) {
     const response = await api.put('/api/user/update-email/', { email });
     return response.data;
   } catch (error) {
-    console.error('Error updating email:', error);
+    // console.error('Error updating email:', error);
     throw error;
   }
 }
@@ -28,7 +28,7 @@ export async function updatePassword(currentPassword, newPassword) {
     });
     return response.data;
   } catch (error) {
-    console.error('Error updating password:', error);
+    // console.error('Error updating password:', error);
     throw error;
   }
 }

@@ -22,7 +22,7 @@ export const AuthProvider = ({ children }) => {
       setUser(jwt_decode(data.access));
       localStorage.setItem('authTokens', JSON.stringify(data));
     } catch (error) {
-      console.error('Login Error:', error);
+      // console.error('Login Error:', error);
       throw error;
     }
   };

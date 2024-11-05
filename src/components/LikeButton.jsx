@@ -49,7 +49,7 @@ function LikeButton({ postId, isLiked, onLikeToggle }) {
         onLikeToggle(true);
       }
     } catch (error) {
-      console.error('Error while liking/unliking the post:', error);
+      //console.error('Error while liking/unliking the post:', error);
       alert("There was an error processing your request.");
     } finally {
       setLoading(false);

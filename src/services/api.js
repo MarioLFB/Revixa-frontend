@@ -46,7 +46,7 @@ api.interceptors.response.use(
 
           return api(originalRequest);
         } catch (err) {
-          console.error('Erro ao atualizar o token:', err);
+          // console.error('Erro ao atualizar o token:', err);
           localStorage.removeItem('authTokens');
           return Promise.reject(err);
         }

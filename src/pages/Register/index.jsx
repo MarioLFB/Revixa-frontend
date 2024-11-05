@@ -80,7 +80,7 @@ function Register() {
       });
         navigate("/dashboard");
     } catch (err) {
-      console.error("Error in handleSubmit:", err);
+      // console.error("Error in handleSubmit:", err);
 
       let errorMessage = "Registration error. Please try again.";
 
