@@ -20,22 +20,6 @@ const Logo = styled(Link)`
   padding: 5rem;
 `;
 
-const CenteredContainer = styled.div`
-  background-color: #ff7f50;
-  padding: 10px 20px;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-
-const CenteredLink = styled(Link)`
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: white;
-  text-decoration: none;
-`;
-
 function MyNavbar() {
   const { user, logout } = useContext(AuthContext);
   const [showLogoutModal, setShowLogoutModal] = useState(false);
@@ -60,18 +44,15 @@ function MyNavbar() {
             </Logo>
           </Navbar.Brand>
 
-          {user && (
-            <CenteredContainer>
-              <CenteredLink to="/account-settings">User Account</CenteredLink>
-            </CenteredContainer>
-          )}
-
           <div className="d-flex align-items-center">
             {user ? (
               <>
-                <span className="navbar-text me-3 p-5">
+                <span className="navbar-text me-3">
                   Hello, {user.username}
                 </span>
+                <PrimaryButton to="/account-settings" className="me-2">
+                  User Account
+                </PrimaryButton>
                 <PrimaryButton as="button" onClick={handleShowLogoutModal}>
                   Logout
                 </PrimaryButton>
