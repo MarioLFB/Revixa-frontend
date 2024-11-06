@@ -88,3 +88,20 @@ Key functionality aspects:
 17. As the site owner, I want to restrict features to logged-in users to maintain privacy.
 18. As the site owner, I want the site to be fully responsive for a smooth experience on all devices.
 19. As the site owner, I want a 404 error page for easy navigation if users encounter broken links.
+
+## Technical Design
+
+### Agile Design
+
+An agile approach was taken in developing this project, utilizing GitHub Projects to track User Stories and prioritize essential functionalities. Labels were used to categorize and guide development focus.
+
+This agile methodology enabled the timely delivery of core functionalities for Revixa, with flexibility for future enhancements.
+
+### CRUD Functionality
+
+Revixa offers full CRUD functionality for user account management:
+
+- **Create**: Users can register and create accounts, post comments on reviews, and give likes to comments. Admins can create new reviews.
+- **Read**: Users can view their profile information, browse reviews, read comments, and see which comments they or others have liked.
+- **Update**: Users can update their profile details, change their email and password, edit their comments, and toggle likes on other users’ comments. Admins can edit reviews as necessary.
+- **Delete**: Users can delete their accounts, remove their comments, and unlike previously liked comments. Admins have the ability to delete reviews to maintain platform quality.
