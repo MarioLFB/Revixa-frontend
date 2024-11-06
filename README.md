@@ -82,3 +82,9 @@ Key functionality aspects:
 
 15. As an admin, I can create reviews to provide expert insights on specific frameworks.
 16. As an admin, I can edit or delete reviews to manage the content on the platform.
+
+### Site Owner Stories
+
+17. As the site owner, I want to restrict features to logged-in users to maintain privacy.
+18. As the site owner, I want the site to be fully responsive for a smooth experience on all devices.
+19. As the site owner, I want a 404 error page for easy navigation if users encounter broken links.
