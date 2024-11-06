@@ -235,3 +235,26 @@ A detailed manual testing process was conducted to validate the functionality of
 | Like button misalignment | Fixed Post component layout by grouping LikeButton and LikesCount within LikeContainer, improving alignment and spacing. |
 | Navigation issues with PrimaryButton | Updated PrimaryButton to use react-router Link for proper navigation behavior. |
 | LikePost method | Changed likePost method from GET to POST for liking posts. |
+
+## Deployment
+
+### Heroku
+
+This project was deployed to Heroku to enable continuous responsive testing. The deployment steps were as follows:
+1. Create a Heroku app.
+2. Set up required environment variables in Heroku.
+3. Deploy via GitHub integration.
+
+### Forking the GitHub Repository
+
+To fork the GitHub repository:
+1. Navigate to the [GitHub repository](https://github.com/MarioLFB/Revixa-frontend.git).
+2. Click on "Fork" in the upper-right corner to create a copy on your account.
+
+### Cloning the GitHub Repository
+
+To clone the GitHub repository:
+1. Navigate to the repository.
+2. Click on "Code" and copy the repository URL.
+3. Run `git clone <URL>` in your terminal.
+
