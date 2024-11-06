@@ -143,3 +143,13 @@ Wireframes of the pages were created to guide the visual development of the proj
 - [React](https://reactjs.org/) - Framework for building user interfaces
 - [Bootstrap](https://getbootstrap.com/) - CSS framework for components and responsiveness
 - [GitHub Projects](https://github.com/) - Used for agile project management and version control
+
+### Libraries
+
+- [Axios](https://axios-http.com/) - For making HTTP requests to interact with the backend API
+- [Bootstrap](https://getbootstrap.com/) - CSS framework for responsive design and component styling
+- [React-Bootstrap](https://react-bootstrap.github.io/) - Pre-built Bootstrap components for React
+- [JWT Decode](https://www.npmjs.com/package/jwt-decode) - For decoding JSON Web Tokens, used in handling authentication
+- [React Router DOM](https://reactrouter.com/) - For managing navigation and routing within the app
+- [React Toastify](https://fkhadra.github.io/react-toastify/) - Provides elegant notifications for user interactions
+- [Styled Components](https://styled-components.com/) - For styling components with CSS-in-JS
