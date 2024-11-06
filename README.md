@@ -224,3 +224,14 @@ The website was tested on the following browsers:
 ### Manual Testing
 
 A detailed manual testing process was conducted to validate the functionality of each user story. See [Testing User Stories](#testing) for more information.
+
+## Bugs
+
+| Bug | Fix |
+| --- | --- |
+| Profile picture upload failed | Fixed by adjusting file handling permissions. |
+| Registration form validation | Improved form validation rules to catch all errors. |
+| Self-like on posts | Restricted users from liking their own posts by conditionally rendering the LikeButton only for non-authored posts, using AuthContext to verify if the current user is the author. Ensures interaction accuracy by disabling self-likes. |
+| Like button misalignment | Fixed Post component layout by grouping LikeButton and LikesCount within LikeContainer, improving alignment and spacing. |
+| Navigation issues with PrimaryButton | Updated PrimaryButton to use react-router Link for proper navigation behavior. |
+| LikePost method | Changed likePost method from GET to POST for liking posts. |
