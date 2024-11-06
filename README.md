@@ -258,3 +258,19 @@ To clone the GitHub repository:
 2. Click on "Code" and copy the repository URL.
 3. Run `git clone <URL>` in your terminal.
 
+## Credits
+
+### Tutorials
+
+- [Django Documentation](https://docs.djangoproject.com/)
+- [React Documentation](https://reactjs.org/docs/getting-started.html)
+
+### Code
+
+- Code Institute's Moments project was referenced for user authentication logic.
+
+## Acknowledgements
+
+- My mentor for guidance throughout the project.
+
+[Back to Top](#revixa)
