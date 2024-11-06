@@ -171,3 +171,11 @@ The front-end was built with React and Vite for optimized development. Modular c
 ## Back-End API
 
 The back-end API for Revixa’s front-end was built with the Django REST Framework, offering full support for account and profile management.
+
+## Features
+
+- **Authentication**: Users can register, log in, and log out to securely access their accounts.
+- **Profile Management**: Users can update their profile information, change their email and password.
+- **Commenting and Likes**: Users can engage with reviews by posting comments, liking other users' comments, and removing likes if desired.
+- **Navigation**: An intuitive navigation bar allows users to explore different sections of the site with ease.
+- **Responsive Design**: Optimized for a smooth experience on various devices, including mobile, tablet, and desktop.
