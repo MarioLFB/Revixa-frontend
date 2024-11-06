@@ -1,3 +1,4 @@
+# Revixa
 Developer: Mario Borges
 
 ![Mockup image](docs/amiresponsive_revixa.png)
@@ -35,12 +36,12 @@ Revixa is a web app for discovering and sharing reviews of popular web developme
 
 ## Project Goals
 
-Revixa aims to build a community platform where developers can share and access valuable insights on web development frameworks. Key features include user registration, authentication, and full CRUD functionality for reviews, comments and profiles.
+Revixa aims to build a community platform where developers can share and access valuable insights on web development frameworks. Key features include user registration, authentication, and CRUD functionality for reviews, comments and profiles.
 
 Key functionality aspects:
 - Simple, intuitive user interface
 - User authentication
-- Full CRUD (Create, Read, Update, Delete) for user accounts
+- Full CRUD (Create, Read, Update, Delete) for user accounts, comments, and reviews created by Admins
 - Responsive design to ensure a smooth experience on mobile and desktop devices
 
 ## User Experience
@@ -55,7 +56,7 @@ Key functionality aspects:
 ### User Requirements and Expectations
 
 - An intuitive, easy-to-navigate interface that simplifies the process of browsing and contributing reviews.
-- Clear and consistent responses for actions like registration, login, and posting reviews or comments.
+- Clear and consistent responses for actions like registration, login, and posting reviews by Admins or comments.
 - Visual feedback for actions such as submitting a review, leaving a comment, or updating a profile.
 - Accessibility features to ensure inclusivity for users with various needs.
 - Responsive design for an optimal experience on both mobile and desktop devices.
@@ -66,28 +67,26 @@ Key functionality aspects:
 1. As a new user, I can register on Revixa to create an account and access the platform's features.
 2. As a user, I can log in to access my profile and personalized content.
 3. As a user, I can update my password to enhance security by providing my current and new password.
-4. As a user, I can update my profile information to keep it current.
-5. As a user, I can access my account settings to manage my email and password.
-6. As a user, I can use the navigation bar to access different sections of the site easily.
-7. As a user, I can view the home page to understand Revixa's purpose and access login or registration options.
-8. As a user, I can find reviews that match my interests.
-9. As a user, I can comment on reviews to engage in discussions or share feedback.
-10. As a user, I can like or unlike comments from other users to support helpful content.
-11. As a user, I can update my email address to keep my contact information current.
-12. As a user, I can change my password to enhance my account security.
-13. As a user, I can see feedback when I log in or out to confirm successful actions.
-14. As a user, I can access social media links in the footer to connect with Revixa externally.
+4. As a user, I can update my email to keep my contact information up-to-date.
+5. As a user, I can use the navigation bar to access different sections (Login/Logout and User Area).
+6. As a user, I can view the home page to understand Revixa's purpose and access login or registration options.
+7. As a user, I can find reviews that match my interests.
+8. As a user, I can comment on reviews to engage in discussions or share feedback.
+9. As a user, I can like or unlike comments from other users to support helpful content.
+10. As a user, I can see feedback when I have a successful or unsuccessful action.
+11. As a user, I can access social media links in the footer to connect with Revixa externally.
 
 ### Admin Stories (Backend Only)
 
-15. As an admin, I can create reviews to provide expert insights on specific frameworks.
-16. As an admin, I can edit or delete reviews to manage the content on the platform.
+12. As an admin, I can create reviews to provide expert insights on specific frameworks.
+13. As an admin, I can edit or delete reviews to manage the content on the platform.
 
 ### Site Owner Stories
 
-17. As the site owner, I want to restrict features to logged-in users to maintain privacy.
-18. As the site owner, I want the site to be fully responsive for a smooth experience on all devices.
-19. As the site owner, I want a 404 error page for easy navigation if users encounter broken links.
+14. As the site owner, I want to restrict features to logged-in users to maintain privacy.
+15. As the site owner, I want the site to be fully responsive for a smooth experience on all devices.
+16. As the site owner, I want a 404 error page for easy navigation if users encounter broken links.
+17. As the site owner, I want the user to have a confirmation prompt when an important action is performed.
 
 ## Technical Design
 
@@ -104,7 +103,7 @@ Revixa offers full CRUD functionality for user account management:
 - **Create**: Users can register and create accounts, post comments on reviews, and give likes to comments. Admins can create new reviews.
 - **Read**: Users can view their profile information, browse reviews, read comments, and see which comments they or others have liked.
 - **Update**: Users can update their profile details, change their email and password, edit their comments, and toggle likes on other users’ comments. Admins can edit reviews as necessary.
-- **Delete**: Users can delete their accounts, remove their comments, and unlike previously liked comments. Admins have the ability to delete reviews to maintain platform quality.
+- **Delete**: Users can remove their comments and unlike previously liked comments. Admins have the ability to delete reviews to maintain platform quality.
 
 ### Colours
 
@@ -112,7 +111,7 @@ The Revixa color palette includes shades of orange and white, providing a modern
 
 <details>
 <summary>Colours</summary>
-<img src="..........png">
+<img src="docs/color_wheel.png">
 </details>
 
 ### Fonts
