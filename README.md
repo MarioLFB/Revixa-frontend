@@ -153,3 +153,12 @@ Wireframes of the pages were created to guide the visual development of the proj
 - [React Router DOM](https://reactrouter.com/) - For managing navigation and routing within the app
 - [React Toastify](https://fkhadra.github.io/react-toastify/) - Provides elegant notifications for user interactions
 - [Styled Components](https://styled-components.com/) - For styling components with CSS-in-JS
+
+### Dev Libraries
+
+- [Vite](https://vitejs.dev/) - Fast build tool and development server, integrated with React for an optimized workflow
+- [ESLint](https://eslint.org/) - For code linting and maintaining code quality
+- [ESLint Plugin React](https://www.npmjs.com/package/eslint-plugin-react) - Extends ESLint with React-specific rules
+- [ESLint Plugin React Hooks](https://www.npmjs.com/package/eslint-plugin-react-hooks) - Enforces React Hooks rules within ESLint
+- [Styled Components](https://styled-components.com/) - For component-level styling with CSS-in-JS in a React environment
+- [React Types](https://www.npmjs.com/package/@types/react) and [React DOM Types](https://www.npmjs.com/package/@types/react-dom) - TypeScript types for React and React DOM, useful for TypeScript projects
