@@ -129,3 +129,17 @@ Wireframes of the pages were created to guide the visual development of the proj
 <img src=".............png">
 <img src=".............png">
 </details>
+
+## Technologies Used
+
+### Coding Languages
+
+- HTML
+- CSS
+- JavaScript
+
+### Frameworks and Tools
+
+- [React](https://reactjs.org/) - Framework for building user interfaces
+- [Bootstrap](https://getbootstrap.com/) - CSS framework for components and responsiveness
+- [GitHub Projects](https://github.com/) - Used for agile project management and version control
