@@ -220,3 +220,7 @@ The website was tested on the following browsers:
 - Google Chrome
 - Mozilla Firefox
 - Safari
+
+### Manual Testing
+
+A detailed manual testing process was conducted to validate the functionality of each user story. See [Testing User Stories](#testing) for more information.
