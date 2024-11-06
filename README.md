@@ -1,6 +1,6 @@
 Developer: Mario Borges
 
-![Mockup image]()
+![Mockup image](docs/amiresponsive_revixa.png)
 
 [View live website](https://revixa-frontend-d26a64f75023.herokuapp.com/)
 
