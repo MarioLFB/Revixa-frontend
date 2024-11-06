@@ -8,6 +8,7 @@ import ReviewPosts from '../Reviews/ReviewPosts';
 import MyNavbar from '../../components/Navbar';
 import Dashboard from '../Dashboard';
 import Footer from '../../components/Footer';
+import Page404 from '../Page404';
 import AccountSettings from '../AccountSettings';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -35,6 +36,7 @@ function HomeWrapper() {
         <Route path="/reviews/:reviewId/posts" element={<ReviewPosts />} /> {/* Displays posts in Reviews Page */}
         <Route path="/dashboard" element={<Dashboard />} /> {/* Dashboard Page */}
         <Route path="/account-settings" element={<AccountSettings />} /> {/* Account Settings Page */}
+        <Route path="*" element={<Page404 />} /> {/* Página 404 */}
       </Routes>
       <Footer /> {/* Footer component */}
     </Router>
