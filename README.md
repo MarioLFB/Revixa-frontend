@@ -162,3 +162,12 @@ Wireframes of the pages were created to guide the visual development of the proj
 - [ESLint Plugin React Hooks](https://www.npmjs.com/package/eslint-plugin-react-hooks) - Enforces React Hooks rules within ESLint
 - [Styled Components](https://styled-components.com/) - For component-level styling with CSS-in-JS in a React environment
 - [React Types](https://www.npmjs.com/package/@types/react) and [React DOM Types](https://www.npmjs.com/package/@types/react-dom) - TypeScript types for React and React DOM, useful for TypeScript projects
+
+## Front-End
+
+The front-end was built with React and Vite for optimized development. Modular components ensure efficiency, with React Bootstrap for styling and Styled Components for custom designs.
+
+
+## Back-End API
+
+The back-end API for Revixa’s front-end was built with the Django REST Framework, offering full support for account and profile management.
