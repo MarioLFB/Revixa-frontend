@@ -32,3 +32,7 @@ Developer: Mario Borges
 ## About
 
 Revixa is a web app for discovering and sharing reviews of popular web development frameworks. It provides insights, comparisons, and user feedback on frameworks. Users can sign in to read in-depth posts, leave feedback, or share their own experiences.
+
+## Project Goals
+
+Revixa aims to build a community platform where developers can share and access valuable insights on web development frameworks. Key features include user registration, authentication, and full CRUD functionality for reviews, comments and profiles.
