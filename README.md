@@ -105,3 +105,12 @@ Revixa offers full CRUD functionality for user account management:
 - **Read**: Users can view their profile information, browse reviews, read comments, and see which comments they or others have liked.
 - **Update**: Users can update their profile details, change their email and password, edit their comments, and toggle likes on other users’ comments. Admins can edit reviews as necessary.
 - **Delete**: Users can delete their accounts, remove their comments, and unlike previously liked comments. Admins have the ability to delete reviews to maintain platform quality.
+
+### Colours
+
+The Revixa color palette includes shades of orange and white, providing a modern and pleasant visual experience.
+
+<details>
+<summary>Colours</summary>
+<img src="..........png">
+</details>
