@@ -179,3 +179,10 @@ The back-end API for Revixa’s front-end was built with the Django REST Framewo
 - **Commenting and Likes**: Users can engage with reviews by posting comments, liking other users' comments, and removing likes if desired.
 - **Navigation**: An intuitive navigation bar allows users to explore different sections of the site with ease.
 - **Responsive Design**: Optimized for a smooth experience on various devices, including mobile, tablet, and desktop.
+
+## Future Features / Improvements
+
+- **Password Recovery**: Allow users to recover their accounts by receiving a password reset link via email.
+- **Social Authentication**: Enable users to log in with social media accounts like Google or LinkedIn.
+- **Notifications**: Introduce notifications to keep users updated on relevant activity and engagement.
+- **Enhanced Admin Tools**: Expand admin capabilities to improve monitoring and moderation of user-generated content.
