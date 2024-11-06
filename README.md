@@ -60,3 +60,20 @@ Key functionality aspects:
 - Accessibility features to ensure inclusivity for users with various needs.
 - Responsive design for an optimal experience on both mobile and desktop devices.
 - Secure authentication and profile management to protect user data and enhance trust.
+
+### User Stories
+
+1. As a new user, I can register on Revixa to create an account and access the platform's features.
+2. As a user, I can log in to access my profile and personalized content.
+3. As a user, I can update my password to enhance security by providing my current and new password.
+4. As a user, I can update my profile information to keep it current.
+5. As a user, I can access my account settings to manage my email and password.
+6. As a user, I can use the navigation bar to access different sections of the site easily.
+7. As a user, I can view the home page to understand Revixa's purpose and access login or registration options.
+8. As a user, I can find reviews that match my interests.
+9. As a user, I can comment on reviews to engage in discussions or share feedback.
+10. As a user, I can like or unlike comments from other users to support helpful content.
+11. As a user, I can update my email address to keep my contact information current.
+12. As a user, I can change my password to enhance my account security.
+13. As a user, I can see feedback when I log in or out to confirm successful actions.
+14. As a user, I can access social media links in the footer to connect with Revixa externally.
