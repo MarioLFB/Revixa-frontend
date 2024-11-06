@@ -118,3 +118,14 @@ The Revixa color palette includes shades of orange and white, providing a modern
 ### Fonts
 
 The font Pacifico was used to ensure a clean and modern reading experience.
+
+### Wireframes
+
+Wireframes of the pages were created to guide the visual development of the project.
+
+<details>
+<summary>Wireframes</summary>
+<img src="..........png">
+<img src=".............png">
+<img src=".............png">
+</details>
