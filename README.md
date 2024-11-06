@@ -186,3 +186,21 @@ The back-end API for Revixa’s front-end was built with the Django REST Framewo
 - **Social Authentication**: Enable users to log in with social media accounts like Google or LinkedIn.
 - **Notifications**: Introduce notifications to keep users updated on relevant activity and engagement.
 - **Enhanced Admin Tools**: Expand admin capabilities to improve monitoring and moderation of user-generated content.
+
+## Validation
+
+### HTML Validation
+
+The W3C HTML Validator was used to validate the website’s HTML, with no errors detected.
+
+### CSS Validation
+
+The W3C CSS Validator was used to validate the website’s CSS, with all files passing validation.
+
+### JavaScript Validation
+
+ESLint was used to validate the JavaScript, ensuring code quality and adherence to standards.
+
+### Accessibility Validation
+
+Lighthouse and WAVE tools were used to evaluate the website’s accessibility, achieving high scores.
