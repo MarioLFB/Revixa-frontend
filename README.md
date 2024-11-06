@@ -36,3 +36,18 @@ Revixa is a web app for discovering and sharing reviews of popular web developme
 ## Project Goals
 
 Revixa aims to build a community platform where developers can share and access valuable insights on web development frameworks. Key features include user registration, authentication, and full CRUD functionality for reviews, comments and profiles.
+
+Key functionality aspects:
+- Simple, intuitive user interface
+- User authentication
+- Full CRUD (Create, Read, Update, Delete) for user accounts
+- Responsive design to ensure a smooth experience on mobile and desktop devices
+
+## User Experience
+
+### Target Audience
+
+- Web developers and software engineers looking for insights on different web development frameworks.
+- New developers seeking guidance on choosing the right technology for their projects.
+- Experienced developers who want to share their knowledge, reviews, and experiences with specific frameworks.
+- Tech enthusiasts interested in keeping up with the latest trends and tools in web development.
