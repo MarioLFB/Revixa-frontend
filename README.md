@@ -77,3 +77,8 @@ Key functionality aspects:
 12. As a user, I can change my password to enhance my account security.
 13. As a user, I can see feedback when I log in or out to confirm successful actions.
 14. As a user, I can access social media links in the footer to connect with Revixa externally.
+
+### Admin Stories (Backend Only)
+
+15. As an admin, I can create reviews to provide expert insights on specific frameworks.
+16. As an admin, I can edit or delete reviews to manage the content on the platform.
