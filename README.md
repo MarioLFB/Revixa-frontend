@@ -229,12 +229,11 @@ A detailed manual testing process was conducted to validate the functionality of
 
 | Bug | Fix |
 | --- | --- |
-| Profile picture upload failed | Fixed by adjusting file handling permissions. |
-| Registration form validation | Improved form validation rules to catch all errors. |
-| Self-like on posts | Restricted users from liking their own posts by conditionally rendering the LikeButton only for non-authored posts, using AuthContext to verify if the current user is the author. Ensures interaction accuracy by disabling self-likes. |
-| Like button misalignment | Fixed Post component layout by grouping LikeButton and LikesCount within LikeContainer, improving alignment and spacing. |
-| Navigation issues with PrimaryButton | Updated PrimaryButton to use react-router Link for proper navigation behavior. |
-| LikePost method | Changed likePost method from GET to POST for liking posts. |
+| Users able to like their own posts | Restricted users from liking their own posts by conditionally rendering `LikeButton` only for non-authored posts, using `AuthContext` to verify if the current user is the author. Ensures interaction accuracy by disabling self-likes. (Commit: 8294e67b32125b7ae34d9a547d05a1a33285b1a6) |
+| Misaligned LikeButton and LikesCount in Post component | Fixed by grouping `LikeButton` and `LikesCount` within `LikeContainer`, improving alignment and spacing. (Commit: 8f55be899d7adb4bbb8a6cb4858f071f1cc0750b) |
+| Incorrect navigation behavior of PrimaryButton | Fixed `PrimaryButton` to correctly use `react-router` `Link` for proper navigation behavior. (Commit: 7e79de89f12760a3da4ed935189998f89de285c8) |
+| Liking posts with incorrect HTTP method | Changed `likePost` method from `GET` to `POST` for liking posts. (Commit: 2e7502ad2460cfa8450ad112df0038a240ddab40) |
+
 
 ## Deployment
 
