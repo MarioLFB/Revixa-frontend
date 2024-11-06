@@ -51,3 +51,12 @@ Key functionality aspects:
 - New developers seeking guidance on choosing the right technology for their projects.
 - Experienced developers who want to share their knowledge, reviews, and experiences with specific frameworks.
 - Tech enthusiasts interested in keeping up with the latest trends and tools in web development.
+
+### User Requirements and Expectations
+
+- An intuitive, easy-to-navigate interface that simplifies the process of browsing and contributing reviews.
+- Clear and consistent responses for actions like registration, login, and posting reviews or comments.
+- Visual feedback for actions such as submitting a review, leaving a comment, or updating a profile.
+- Accessibility features to ensure inclusivity for users with various needs.
+- Responsive design for an optimal experience on both mobile and desktop devices.
+- Secure authentication and profile management to protect user data and enhance trust.
