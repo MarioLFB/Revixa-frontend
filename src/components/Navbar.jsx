@@ -1,5 +1,6 @@
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
+import Nav from "react-bootstrap/Nav";
 import { Link, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import AuthContext from "../context/AuthContext";
@@ -37,30 +38,30 @@ function MyNavbar() {
   return (
     <>
       <Navbar expand="lg" className="bg-white">
-        <Container fluid className="justify-content-between">
+        <Container fluid>
           <Navbar.Brand>
             <Logo to="/" className="navbar-brand">
               Revixa
             </Logo>
           </Navbar.Brand>
-
-          <div className="d-flex align-items-center">
-            {user ? (
-              <>
-                <span className="navbar-text me-3">
-                  Hello, {user.username}
-                </span>
-                <PrimaryButton to="/account-settings" className="me-2">
-                  User Account
-                </PrimaryButton>
-                <PrimaryButton as="button" onClick={handleShowLogoutModal}>
-                  Logout
-                </PrimaryButton>
-              </>
-            ) : (
-              <PrimaryButton to="/login">Login</PrimaryButton>
-            )}
-          </div>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="ms-auto d-flex align-items-center">
+              {user ? (
+                <>
+                  <span className="navbar-text me-3">Hello, {user.username}</span>
+                  <PrimaryButton to="/account-settings" className="me-2 mb-2">
+                    User Account
+                  </PrimaryButton>
+                  <PrimaryButton as="button" className="mb-2" onClick={handleShowLogoutModal}>
+                    Logout
+                  </PrimaryButton>
+                </>
+              ) : (
+                <PrimaryButton to="/login">Login</PrimaryButton>
+              )}
+            </Nav>
+          </Navbar.Collapse>
         </Container>
       </Navbar>
 
