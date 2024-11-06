@@ -204,3 +204,19 @@ ESLint was used to validate the JavaScript, ensuring code quality and adherence 
 ### Accessibility Validation
 
 Lighthouse and WAVE tools were used to evaluate the website’s accessibility, achieving high scores.
+
+## Testing
+
+### Device Testing
+
+The website was tested on various devices:
+- Windows PC
+- MacBook Pro
+- iPhone and Android mobile devices
+
+### Browser Compatibility
+
+The website was tested on the following browsers:
+- Google Chrome
+- Mozilla Firefox
+- Safari
