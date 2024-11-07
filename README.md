@@ -208,6 +208,134 @@ Wireframes of the pages were created to guide the visual development of the proj
 The front-end was built with React and Vite for optimized development. Modular components ensure efficiency, with React Bootstrap for styling and Styled Components for custom designs.
 
 
+### Components and Their Use
+
+#### `<Navbar />`
+Provides primary navigation functionality for the site, allowing users to access different sections, including login, logout, and user areas.
+**Used in User Stories:** 5
+
+#### `<Footer />`
+Contains social media links and additional site information.
+**Used in User Stories:** 11
+
+#### `<RegisterCTA />`
+Prompts new users to register and directs them to the appropriate form.
+**Used in User Stories:** 1, 6
+
+#### `<PrimaryButton />`
+A reusable component for consistent button styling across the application.
+
+#### `<Post />`
+Represents individual review posts, displaying content and interacting with user comments and likes.
+**Used in User Stories:** 7, 8, 9
+
+#### `<LikeButton />`
+Allows users to like or unlike comments from other users.
+**Used in User Stories:** 9
+
+#### `<ReviewContent />`
+Handles the display of detailed review content.
+**Used in User Stories:** 7, 8
+
+#### `<GlobalStyles />`
+Manages global styling for consistent appearance across the application.
+
+### Context
+
+#### `AuthContext`
+Manages user authentication state, providing context for login, registration, and logout functionalities.
+**Used in User Stories:** 1, 2, 3, 14
+
+### Pages
+
+#### **Home Page** (`src/pages/Home`)
+Provides a landing page with information about Revixa, including calls to action for login or registration.
+**Used in User Stories:** 6
+
+#### **Register Page** (`src/pages/Register`)
+Allows new users to create accounts by providing their information.
+**Used in User Stories:** 1
+
+#### **Login Page** (`src/pages/Login`)
+Handles user login functionality, including form validation and error handling.
+**Used in User Stories:** 2
+
+#### **Dashboard Page** (`src/pages/Dashboard`)
+Provides personalized content for logged-in users, including profile and account settings access.
+**Used in User Stories:** 2, 5
+
+#### **AccountSettings Page** (`src/pages/AccountSettings`)
+Allows users to update their email, password, and other profile information.
+**Used in User Stories:** 3, 4, 5, 12
+
+#### **Page404** (`src/pages/Page404`)
+Displays a 404 error page for navigating users when encountering broken links.
+**Used in User Stories:** 16
+
+#### **Reviews Page** (`src/pages/Reviews`)
+Displays a list of reviews, including filtering options and individual review posts.
+**Used in User Stories:** 7, 8
+
+#### **ReviewPosts** (`src/pages/Reviews/ReviewPosts.jsx`)
+Displays individual review details, including comments and likes.
+**Used in User Stories:** 7, 8, 9
+
+### Services
+
+#### `api.js`
+Serves as a base configuration for making HTTP requests to the backend API. It handles API initialization, common request settings, and error handling.
+**Used in User Stories:** All relevant user interactions requiring data fetch or submission (e.g., 1, 2, 3, 4, 5, 7, 8, 9, etc.)
+
+#### `auth.js`
+Manages all authentication-related operations, including user login, registration, and token management.
+**Used in User Stories:** 1, 2, 3, 14
+
+#### `like.js`
+Handles actions related to liking or unliking comments or reviews, providing methods for toggling the like status.
+**Used in User Stories:** 9 (likes and unlikes on comments)
+
+#### `posts.js`
+Manages CRUD operations for posts, including fetching posts, creating new posts, updating existing ones, and deleting.
+**Used in User Stories:** 7, 12, 13 (for admin actions)
+
+#### `reviews.js`
+Provides functions to handle operations specifically related to reviews, including fetching review details and other review-related tasks.
+**Used in User Stories:** 7, 8, 12, 13 (admin tasks for reviews)
+
+#### `user.js`
+Handles user-related functions such as fetching user data, updating user information, and managing user profiles.
+**Used in User Stories:** 4, 5 (profile and account management operations)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-----------------------------------------------------
+
+
 ## Back-End API
 
 The back-end API for Revixa’s front-end was built with the Django REST Framework, offering full support for account and profile management.
