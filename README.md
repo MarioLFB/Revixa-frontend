@@ -123,10 +123,51 @@ The font Pacifico was used to ensure a clean and modern reading experience.
 Wireframes of the pages were created to guide the visual development of the project.
 
 <details>
-<summary>Wireframes</summary>
-<img src="..........png">
-<img src=".............png">
-<img src=".............png">
+<summary>Login</summary>
+<img src="docs\wireframes\loginpage.png">
+<img src="docs\wireframes\login_mobile.png">
+</details>
+
+<details>
+<summary>Register</summary>
+<img src="docs\wireframes\registerpage.png">
+<img src="docs\wireframes\register_mobile.png">
+</details>
+
+<details>
+<summary>Home Not Login</summary>
+<img src="docs\wireframes\homepage_notlogin.png">
+<img src="docs\wireframes\homepage_notlogin_mobile.png">
+</details>
+
+<details>
+<summary>Home Logged in</summary>
+<img src="docs\wireframes\homepage_loggedin.png">
+<img src="docs\wireframes\homepage_loggedin_mobile.png">
+</details>
+
+<details>
+<summary>Dashboard</summary>
+<img src="docs\wireframes\dashboard.png">
+<img src="docs\wireframes\dashboard_mobile.png">
+</details>
+
+<details>
+<summary>Post</summary>
+<img src="docs\wireframes\postpage.png">
+<img src="docs\wireframes\postpage_mobile.png">
+</details>
+
+<details>
+<summary>Account Settings</summary>
+<img src="docs\wireframes\accountsettings.png">
+<img src="docs\wireframes\accountsettings_mobile.png">
+</details>
+
+<details>
+<summary>Page 404</summary>
+<img src="docs\wireframes\404page.png">
+<img src="docs\wireframes\404page_mobile.png">
 </details>
 
 ## Technologies Used
