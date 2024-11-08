@@ -401,6 +401,41 @@ The back-end API for Revixa’s front-end was built with the Django REST Framewo
 
 The W3C HTML Validator was used to validate the website’s HTML, with no errors detected.
 
+<details>
+<summary>Home</summary>
+<img src="docs\validator w3\home_w3.jpg">
+</details>
+
+<details>
+<summary>Login</summary>
+<img src="docs\validator w3\login_w3.jpg">
+</details>
+
+<details>
+<summary>Register</summary>
+<img src="docs\validator w3\register_w3.jpg">
+</details>
+
+<details>
+<summary>Dashboard</summary>
+<img src="docs\validator w3\dashboard_w3.jpg">
+</details>
+
+<details>
+<summary>Posts</summary>
+<img src="docs\validator w3\posts_w3.jpg">
+</details>
+
+<details>
+<summary>Account Settings</summary>
+<img src="docs\validator w3\accountsettings_w3.jpg">
+</details>
+
+<details>
+<summary>Page 404</summary>
+<img src="docs\validator w3\page404_w3.jpg">
+</details>
+
 ### CSS Validation
 
 The W3C CSS Validator was used to validate the website’s CSS, with all files passing validation.
