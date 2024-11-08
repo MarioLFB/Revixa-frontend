@@ -588,7 +588,47 @@ Lighthouse:
 <img src="docs\lighthouse\page404_mobile.jpg">
 </details>
 
+Wave Validation:
+<details>
+<summary>Home</summary>
+<img src="docs\wave_validation\home_wave.jpg">
+</details>
+<details>
 
+<details>
+<summary>Login</summary>
+<img src="docs\wave_validation\login_wave.jpg">
+</details>
+<details>
+
+<details>
+<summary>Register</summary>
+<img src="docs\wave_validation\register_wave.jpg">
+</details>
+<details>
+
+<details>
+<summary>Dashboard</summary>
+<img src="docs\wave_validation\dashboard_wave.jpg">
+</details>
+
+<details>
+<summary>Posts</summary>
+<img src="docs\wave_validation\posts_wave.jpg">
+</details>
+<details>
+
+<details>
+<summary>Account Settings</summary>
+<img src="docs\wave_validation\accountsettings_wave.jpg">
+</details>
+<details>
+
+<details>
+<summary>Page 404</summary>
+<img src="docs\wave_validation\page404_wave.jpg">
+</details>
+<details>
 
 
 
