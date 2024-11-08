@@ -522,9 +522,95 @@ Project was successfully validated using ESLint, confirming adherence to defined
 <img src="docs\lint\lint_validation.jpg">
 </details>
 
-### Accessibility Validation
+### Lighthouse and Accessibility Validation
 
-Lighthouse and WAVE tools were used to evaluate the website’s accessibility, achieving high scores.
+Lighthouse:
+<details>
+<summary>Home Desktop</summary>
+<img src="docs\lighthouse\home_desktop.jpg">
+</details>
+<details>
+<summary>Home Mobile</summary>
+<img src="docs\lighthouse\login_mobile.jpg">
+</details>
+
+<details>
+<summary>Login Desktop</summary>
+<img src="docs\lighthouse\login_desktop.jpg">
+</details>
+<details>
+<summary>Login Mobile</summary>
+<img src="docs\lighthouse\login_mobile.jpg">
+</details>
+
+<details>
+<summary>Register Desktop</summary>
+<img src="docs\lighthouse\register_desktop.jpg">
+</details>
+<details>
+<summary>Register Mobile</summary>
+<img src="docs\lighthouse\register_mobile.jpg">
+</details>
+
+<details>
+<summary>Dashboard Desktop</summary>
+<img src="docs\lighthouse\dashboard_desktop.jpg">
+</details>
+<details>
+<summary>Dashboard Mobile</summary>
+<img src="docs\lighthouse\dashboard_mobile.jpg">
+</details>
+
+<details>
+<summary>Posts Desktop</summary>
+<img src="docs\lighthouse\posts_desktop.jpg">
+</details>
+<details>
+<summary>Posts Mobile</summary>
+<img src="docs\lighthouse\posts_mobile.jpg">
+</details>
+
+<details>
+<summary>Account Settings Desktop</summary>
+<img src="docs\lighthouse\accountsettings_desktop.jpg">
+</details>
+<details>
+<summary>Account Settings Mobile</summary>
+<img src="docs\lighthouse\accountsettings_mobile.jpg">
+</details>
+
+<details>
+<summary>Page 404 Desktop</summary>
+<img src="docs\lighthouse\page404_desktop.jpg">
+</details>
+<details>
+<summary>Page 404 Mobile</summary>
+<img src="docs\lighthouse\page404_mobile.jpg">
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Testing
 
