@@ -307,46 +307,86 @@ Handles user-related functions such as fetching user data, updating user informa
 **Used in User Stories:** 4, 5 (profile and account management operations)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
------------------------------------------------------
-
-
 ## Back-End API
 
 The back-end API for Revixa’s front-end was built with the Django REST Framework, offering full support for account and profile management.
+[here](https://github.com/MarioLFB/Revixa-backend)
 
 ## Features
 
 - **Authentication**: Users can register, log in, and log out to securely access their accounts.
+- Covered in user stories: 1, 2, 14
+<details>
+<summary>Register</summary>
+<img src="docs\features\register.jpg">
+</details>
+
+<details>
+<summary>Login</summary>
+<img src="docs\features\login.jpg">
+</details>
+
+<details>
+<summary>Log out</summary>
+<img src="docs\features\logout.jpg">
+</details>
+
 - **Profile Management**: Users can update their profile information, change their email and password.
-- **Commenting and Likes**: Users can engage with reviews by posting comments, liking other users' comments, and removing likes if desired.
-- **Navigation**: An intuitive navigation bar allows users to explore different sections of the site with ease.
-- **Responsive Design**: Optimized for a smooth experience on various devices, including mobile, tablet, and desktop.
+- Covered in user stories: 3, 4
+<details>
+<summary>Account Settings</summary>
+<img src="docs\features\account_settings.jpg">
+</details>
+
+- **Review Access**: The Dashboard provides a streamlined overview of all available reviews, enabling users to quickly access detailed.
+- Covered in user stories: 7, 12, 13
+<details>
+<summary>Dashboard</summary>
+<img src="docs\features\dashboard.jpg">
+</details>
+
+- **Commenting and Likes**: Users can engage with reviews by posting comments,as well as editing and deleting them, liking other users' comments, and removing likes if desired.
+- Covered in user stories: 8, 9
+<details>
+<summary>Posts</summary>
+<img src="docs\features\posts.jpg">
+</details>
+
+- **Navigation**: A navigation bar, along with intuitive links, allows users to effortlessly explore different sections and areas of the site.
+- Covered in user stories: 5, 6
+<details>
+<summary>Links and Navigation</summary>
+<img src="docs\features\navigation.jpg">
+</details>
+
+- **Responsive Design**: Optimized for a smooth experience on various devices and desktop.
+- Covered in user stories: 15
+<details>
+<summary>Responsive</summary>
+<img src="docs\features\responsive.jpg">
+</details>
+
+- **Footer**: Provides social media links, contact information, and copyright details for easy access.
+- Covered in user stories: 11
+<details>
+<summary>Footer</summary>
+<img src="docs\features\footer.jpg">
+</details>
+
+- **User Feedback**: Provides feedback on user actions, indicating success or failure, and includes prompts to confirm important actions.
+- Covered in user stories: 10, 17
+<details>
+<summary>Feedback</summary>
+<img src="docs\features\feedback.jpg">
+</details>
+
+- **404 Error Page**: A custom 404 error page helps users navigate back to active areas of the site when encountering broken or nonexistent links.
+- Covered in user stories: 16
+<details>
+<summary>404 Page</summary>
+<img src="docs\features\page404.jpg">
+</details>
+
 
 ## Future Features / Improvements
 
