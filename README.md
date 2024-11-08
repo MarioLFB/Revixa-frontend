@@ -516,7 +516,11 @@ The W3C CSS Validator was used to validate the website’s CSS, with all files p
 
 ### JavaScript Validation
 
-ESLint was used to validate the JavaScript, ensuring code quality and adherence to standards.
+Project was successfully validated using ESLint, confirming adherence to defined coding standards and ensuring consistency across JavaScript and JSX code.
+<details>
+<summary>Lint</summary>
+<img src="docs\lint\lint_validation.jpg">
+</details>
 
 ### Accessibility Validation
 
