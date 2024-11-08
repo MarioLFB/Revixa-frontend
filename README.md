@@ -248,35 +248,35 @@ Manages user authentication state, providing context for login, registration, an
 
 ### Pages
 
-#### **Home Page** (`src/pages/Home`)
+#### **Home Page** (`Home`)
 Provides a landing page with information about Revixa, including calls to action for login or registration.
 **Used in User Stories:** 6
 
-#### **Register Page** (`src/pages/Register`)
+#### **Register Page** (`Register`)
 Allows new users to create accounts by providing their information.
 **Used in User Stories:** 1
 
-#### **Login Page** (`src/pages/Login`)
+#### **Login Page** (`Login`)
 Handles user login functionality, including form validation and error handling.
 **Used in User Stories:** 2
 
-#### **Dashboard Page** (`src/pages/Dashboard`)
+#### **Dashboard Page** (`Dashboard`)
 Provides personalized content for logged-in users, including profile and account settings access.
 **Used in User Stories:** 2, 5
 
-#### **AccountSettings Page** (`src/pages/AccountSettings`)
+#### **AccountSettings Page** (`AccountSettings`)
 Allows users to update their email, password, and other profile information.
 **Used in User Stories:** 3, 4, 5, 12
 
-#### **Page404** (`src/pages/Page404`)
+#### **Page404** (`Page404`)
 Displays a 404 error page for navigating users when encountering broken links.
 **Used in User Stories:** 16
 
-#### **Reviews Page** (`src/pages/Reviews`)
-Displays a list of reviews, including filtering options and individual review posts.
+#### **Reviews Page** (`Reviews`)
+Displays a list of reviews and individual review posts.
 **Used in User Stories:** 7, 8
 
-#### **ReviewPosts** (`src/pages/Reviews/ReviewPosts.jsx`)
+#### **ReviewPosts** (`ReviewPosts`)
 Displays individual review details, including comments and likes.
 **Used in User Stories:** 7, 8, 9
 
