@@ -439,6 +439,80 @@ The W3C HTML Validator was used to validate the website’s HTML, with no errors
 ### CSS Validation
 
 The W3C CSS Validator was used to validate the website’s CSS, with all files passing validation.
+<details>
+<summary>Account Settings</summary>
+<img src="docs\jigsaw\accountsettings_jigsaw.jpg">
+</details>
+
+<details>
+<summary>Footer</summary>
+<img src="docs\jigsaw\footer_jigsaw.jpg">
+</details>
+
+<details>
+<summary>Global Styles</summary>
+<img src="docs\jigsaw\globalStyles_jigsaw.jpg">
+</details>
+
+<details>
+<summary>Home</summary>
+<img src="docs\jigsaw\home_jigsaw.jpg">
+</details>
+
+<details>
+<summary>Like Button</summary>
+<img src="docs\jigsaw\likeButton_jigsaw.jpg">
+</details>
+
+<details>
+<summary>Login</summary>
+<img src="docs\jigsaw\login_jigsaw.jpg">
+</details>
+
+<details>
+<summary>Navbar</summary>
+<img src="docs\jigsaw\navbar_jigsaw.jpg">
+</details>
+
+<details>
+<summary>Page 404</summary>
+<img src="docs\jigsaw\page404_jigsaw.jpg">
+</details>
+
+<details>
+<summary>Post</summary>
+<img src="docs\jigsaw\post_jigsaw.jpg">
+</details>
+
+<details>
+<summary>Primary Button</summary>
+<img src="docs\jigsaw\primarybutton_jigsaw.jpg">
+</details>
+
+<details>
+<summary>Register</summary>
+<img src="docs\jigsaw\register_jigsaw.jpg">
+</details>
+
+<details>
+<summary>Register CTA</summary>
+<img src="docs\jigsaw\registercta_jigsaw.jpg">
+</details>
+
+<details>
+<summary>Review Content</summary>
+<img src="docs\jigsaw\reviewcontent_jigsaw.jpg">
+</details>
+
+<details>
+<summary>Review Posts</summary>
+<img src="docs\jigsaw\reviewposts_jigsaw.jpg">
+</details>
+
+<details>
+<summary>Review</summary>
+<img src="docs\jigsaw\reviews_jigsaw.jpg">
+</details>
 
 ### JavaScript Validation
 
