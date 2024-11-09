@@ -183,6 +183,17 @@ Wireframes of the pages were created to guide the visual development of the proj
 - [React](https://reactjs.org/) - Framework for building user interfaces
 - [Bootstrap](https://getbootstrap.com/) - CSS framework for components and responsiveness
 - [GitHub Projects](https://github.com/) - Used for agile project management and version control
+- [Am I Responsive](http://ami.responsivedesign.is/) - Tool for testing responsive design. Justification: Used to generate the multi-device mock-up displayed at the top of this README.md file.
+- [Google Fonts](https://fonts.google.com/) - Comprehensive font library. Justification: Utilized for importing custom fonts into the project.
+- [Git](https://git-scm.com/) - Distributed version control system. Justification: Employed for version management and code deployment to GitHub.
+- [GitHub](https://github.com/) - Online hosting platform for code repositories. Justification: Utilized for storing and managing the project's codebase remotely.
+- [VS Code](https://code.visualstudio.com/) - Source code editor developed by Microsoft. Justification: Used as the main development environment for coding, debugging, and managing project files efficiently.
+- Code Validation Tools:
+  - [WC3 Validator](https://validator.w3.org/) - HTML code validation tool. Justification: Used to check and ensure proper HTML code structure.
+  - [Jigsaw W3 Validator](https://jigsaw.w3.org/css-validator/) - CSS code validation tool. Justification: Employed to verify and validate the project's CSS code.
+  - [ESLint](https://eslint.org/) - JavaScript code linting tool. Justification: Used to check and validate JSX code within the application.
+  - [Lighthouse](https://developers.google.com/web/tools/lighthouse/) - Web performance and auditing tool. Justification: Utilized to evaluate performance, accessibility, best practices, and SEO of the application.
+  - [Wave](https://wave.webaim.org/) - Web accessibility evaluation tool. Justification: Used to assess and enhance the application's accessibility compliance.
 
 ### Libraries
 
@@ -647,14 +658,8 @@ The website was tested on the following browsers:
 - Mozilla Firefox
 - Safari
 
-
-
-
-
-
 ### Manual Testing
-
-A detailed manual testing process was conducted to validate the functionality of each user story. See [Testing User Stories](#testing) for more information.
+A detailed manual testing process was conducted to validate the functionality of each user story.
 
 1. As a new user, I can register on Revixa to create an account and access the platform's features.
 
@@ -912,9 +917,19 @@ A detailed manual testing process was conducted to validate the functionality of
 ### Heroku
 
 This project was deployed to Heroku to enable continuous responsive testing. The deployment steps were as follows:
-1. Create a Heroku app.
-2. Set up required environment variables in Heroku.
-3. Deploy via GitHub integration.
+1. Access the [Heroku website](https://www.heroku.com/) and log in: Start by navigating to the Heroku website and logging into your account.
+2. Create a Heroku app: Once logged in, click on the "New" button in the dashboard and select "Create new app." Provide a unique name for your app and select the appropriate region (either the United States or Europe).
+3. Set up required environment variables in Heroku: Navigate to the "Settings" tab of your newly created app. Click on "Reveal Config Vars" and add the necessary environment variables for your application.
+4. Deploy via GitHub integration: Go to the "Deploy" tab. Under "Deployment method," select "GitHub" and connect your GitHub account if you haven't already. Search for the repository you want to deploy, then click "Connect."
+5. Deploy the application: Choose whether to enable automatic deploys or deploy manually by clicking on "Deploy Branch."
+6. Open the app: After a successful deployment, you can open your app by clicking on the "Open App" button at the top right corner of the Heroku dashboard.
+<details>
+<img src="docs\heroku\heroku_1.jpg">
+<img src="docs\heroku\heroku_2.jpg">
+<img src="docs\heroku\heroku_3.jpg">
+<img src="docs\heroku\heroku_4.jpg">
+<img src="docs\heroku\heroku_5.jpg">
+</details>
 
 ### Forking the GitHub Repository
 
