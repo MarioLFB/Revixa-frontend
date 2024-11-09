@@ -524,11 +524,12 @@ Project was successfully validated using ESLint, confirming adherence to defined
 
 ### Lighthouse and Accessibility Validation
 
-Lighthouse:
+#### Lighthouse:
 <details>
 <summary>Home Desktop</summary>
 <img src="docs\lighthouse\home_desktop.jpg">
 </details>
+
 <details>
 <summary>Home Mobile</summary>
 <img src="docs\lighthouse\login_mobile.jpg">
@@ -538,6 +539,7 @@ Lighthouse:
 <summary>Login Desktop</summary>
 <img src="docs\lighthouse\login_desktop.jpg">
 </details>
+
 <details>
 <summary>Login Mobile</summary>
 <img src="docs\lighthouse\login_mobile.jpg">
@@ -547,6 +549,7 @@ Lighthouse:
 <summary>Register Desktop</summary>
 <img src="docs\lighthouse\register_desktop.jpg">
 </details>
+
 <details>
 <summary>Register Mobile</summary>
 <img src="docs\lighthouse\register_mobile.jpg">
@@ -556,6 +559,7 @@ Lighthouse:
 <summary>Dashboard Desktop</summary>
 <img src="docs\lighthouse\dashboard_desktop.jpg">
 </details>
+
 <details>
 <summary>Dashboard Mobile</summary>
 <img src="docs\lighthouse\dashboard_mobile.jpg">
@@ -565,6 +569,7 @@ Lighthouse:
 <summary>Posts Desktop</summary>
 <img src="docs\lighthouse\posts_desktop.jpg">
 </details>
+
 <details>
 <summary>Posts Mobile</summary>
 <img src="docs\lighthouse\posts_mobile.jpg">
@@ -574,6 +579,7 @@ Lighthouse:
 <summary>Account Settings Desktop</summary>
 <img src="docs\lighthouse\accountsettings_desktop.jpg">
 </details>
+
 <details>
 <summary>Account Settings Mobile</summary>
 <img src="docs\lighthouse\accountsettings_mobile.jpg">
@@ -583,12 +589,13 @@ Lighthouse:
 <summary>Page 404 Desktop</summary>
 <img src="docs\lighthouse\page404_desktop.jpg">
 </details>
+
 <details>
 <summary>Page 404 Mobile</summary>
 <img src="docs\lighthouse\page404_mobile.jpg">
 </details>
 
-Wave Validation:
+#### Wave Validation:
 <details>
 <summary>Home</summary>
 <img src="docs\wave_validation\home_wave.jpg">
