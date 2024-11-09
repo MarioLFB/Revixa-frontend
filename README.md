@@ -83,7 +83,7 @@ Key functionality aspects:
 
 ### Site Owner Stories
 
-14. As the site owner, I want to restrict features to logged-in users to maintain privacy.
+14. As the site owner, I want to restrict features to logged-in users to maintain privacy(create posts and give likes).
 15. As the site owner, I want the site to be fully responsive for a smooth experience on all devices.
 16. As the site owner, I want a 404 error page for easy navigation if users encounter broken links.
 17. As the site owner, I want the user to have a confirmation prompt when an important action is performed.
@@ -101,9 +101,9 @@ This agile methodology enabled the timely delivery of core functionalities for R
 Revixa offers full CRUD functionality for user account management:
 
 - **Create**: Users can register and create accounts, post comments on reviews, and give likes to comments. Admins can create new reviews.
-- **Read**: Users can view their profile information, browse reviews, read comments, and see which comments they or others have liked.
-- **Update**: Users can update their profile details, change their email and password, edit their comments, and toggle likes on other users’ comments. Admins can edit reviews as necessary.
-- **Delete**: Users can remove their comments and unlike previously liked comments. Admins have the ability to delete reviews to maintain platform quality.
+- **Read**: Users can view their profile information, view reviews, read comments, and see And see the likes counter.
+- **Update**: Users can update their profile details, change their email and password, edit their comments, and toggle likes on other users’ comments. Admins only can edit reviews as necessary.
+- **Delete**: Users can remove their comments and likes previously liked. Admins have the ability to delete reviews to maintain platform quality.
 
 ### Colours
 
@@ -302,12 +302,12 @@ Manages all authentication-related operations, including user login, registratio
 **Used in User Stories:** 1, 2, 3, 14
 
 #### `like.js`
-Handles actions related to liking or unliking comments or reviews, providing methods for toggling the like status.
-**Used in User Stories:** 9 (likes and unlikes on comments)
+Handles actions related to liking comments, providing methods for toggling the like status.
+**Used in User Stories:** 9 (likes and remove likes given on comments)
 
 #### `posts.js`
 Manages CRUD operations for posts, including fetching posts, creating new posts, updating existing ones, and deleting.
-**Used in User Stories:** 7, 12, 13 (for admin actions)
+**Used in User Stories:** 7, 12, 13 (Users can create delete and edit their own posts)
 
 #### `reviews.js`
 Provides functions to handle operations specifically related to reviews, including fetching review details and other review-related tasks.
