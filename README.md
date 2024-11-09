@@ -631,28 +631,6 @@ Project was successfully validated using ESLint, confirming adherence to defined
 <img src="docs\wave_validation\page404_wave.jpg">
 </details>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ## Testing
 
 ### Device Testing
@@ -669,9 +647,255 @@ The website was tested on the following browsers:
 - Mozilla Firefox
 - Safari
 
+
+
+
+
+
 ### Manual Testing
 
 A detailed manual testing process was conducted to validate the functionality of each user story. See [Testing User Stories](#testing) for more information.
+
+1. As a new user, I can register on Revixa to create an account and access the platform's features.
+
+| Feature           | Action                                                        | Expected Result                                                                                  | Actual Result        |
+| ----------------- | ------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | -------------------- |
+| Authentication    | Navigate to the registration page, fill in the required fields, and submit the form | Account should be created, and user redirected to a confirmation or login page upon successful registration | Works as expected    |
+
+<details>
+<summary>Register</summary>
+<img src="docs\manual_test\register_test_1.jpg">
+<img src="docs\manual_test\register_test_2.jpg">
+<img src="docs\manual_test\register_test_3.jpg">
+</details>
+
+2. As a user, I can log in to access my profile and personalized content.
+
+| Feature           | Action                                                        | Expected Result                                                                                  | Actual Result        |
+| ----------------- | ------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | -------------------- |
+| Authentication    | Navigate to the login page, fill in username and password, and submit | User should be authenticated and redirected to their profile or personalized dashboard            | Works as expected    |
+
+<details>
+<summary>Login</summary>
+<img src="docs\manual_test\login_test_1.jpg">
+<img src="docs\manual_test\login_test_2.jpg">
+<img src="docs\manual_test\login_test_3.jpg">
+</details>
+
+3. As a user, I can update my password to enhance security by providing my current and new password.
+
+| Feature           | Action                                                        | Expected Result                                                                                  | Actual Result        |
+| ----------------- | ------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | -------------------- |
+| Profile Management | Navigate to account settings, enter current password, new password, and confirm new password, then submit | User's password should be updated with a success confirmation                                   | Works as expected    |
+
+<details>
+<summary>Screenshots</summary>
+<img src="docs\manual_test\password_update_test_1.jpg">
+<img src="docs\manual_test\password_update_test_2.jpg">
+<img src="docs\manual_test\password_update_test_3.jpg">
+<img src="docs\manual_test\password_update_test_4.jpg">
+</details>
+
+4. As a user, I can update my email to keep my contact information up-to-date.
+
+| Feature           | Action                                                        | Expected Result                                                                                  | Actual Result        |
+| ----------------- | ------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | -------------------- |
+| Profile Management | Navigate to account settings, change the email address field, and submit | User's email should be updated with a success message                                           | Works as expected    |
+
+<details>
+<summary>Screenshots</summary>
+<img src="docs\manual_test\email_update_test_1.jpg">
+<img src="docs\manual_test\email_update_test_2.jpg">
+<img src="docs\manual_test\email_update_test_3.jpg">
+</details>
+
+5. As a user, I can use the navigation bar to access different sections (Login/Logout and User Area).
+
+| Feature           | Action                                                        | Expected Result                                                                                  | Actual Result        |
+| ----------------- | ------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | -------------------- |
+| Navigation        | Use the navigation bar links to access different site sections | User should be able to seamlessly navigate between sections                                      | Works as expected    |
+
+<details>
+<summary>Screenshots</summary>
+<img src="docs\manual_test\navigation_test_1.jpg">
+<img src="docs\manual_test\navigation_test_2.jpg">
+<img src="docs\manual_test\navigation_test_3.jpg">
+<img src="docs\manual_test\navigation_test_4.jpg">
+</details>
+
+6. As a user, I can view the home page to understand Revixa's purpose and access login or registration options.
+
+| Feature           | Action                                                        | Expected Result                                                                                  | Actual Result        |
+| ----------------- | ------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | -------------------- |
+| Home Page         | Visit the homepage                                           | User should see site description and links to login or register                                  | Works as expected    |
+
+<details>
+<summary>Screenshots</summary>
+<img src="docs\manual_test\homepage_test_1.jpg">
+</details>
+
+7. As a user, I can find reviews that match my interests.
+
+| Feature           | Action                                                        | Expected Result                                                                                  | Actual Result        |
+| ----------------- | ------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | -------------------- |
+| Review Access     | Use search or filters to find reviews                        | User should see a list of relevant reviews matching their interests                              | Works as expected    |
+
+<details>
+<summary>Screenshots</summary>
+<img src="docs\manual_test\reviews_test_1.jpg">
+<img src="docs\manual_test\reviews_test_2.jpg">
+</details>
+
+8. As a user, I can comment on reviews to engage in discussions or share feedback.
+
+| Feature           | Action                                                        | Expected Result                                                                                  | Actual Result        |
+| ----------------- | ------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | -------------------- |
+| Commenting and Likes | Add a comment to a review and submit                      | Comment should be posted and displayed under the review                                         | Works as expected    |
+
+<details>
+<summary>Screenshots</summary>
+<img src="docs\manual_test\comment_test_1.jpg">
+<img src="docs\manual_test\comment_test_2.jpg">
+<img src="docs\manual_test\comment_test_3.jpg">
+<img src="docs\manual_test\comment_test_4.jpg">
+</details>
+
+9. As a user, I can like or unlike comments from other users to support helpful content.
+
+| Feature           | Action                                                        | Expected Result                                                                                  | Actual Result        |
+| ----------------- | ------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | -------------------- |
+| Commenting and Likes | Click like/unlike on comments                              | Like/unlike status should toggle for the comment                                                | Works as expected    |
+
+<details>
+<summary>Screenshots</summary>
+<img src="docs\manual_test\like_test_1.jpg">
+<img src="docs\manual_test\like_test_2.jpg">
+</details>
+
+10. As a user, I can see feedback when I have a successful or unsuccessful action.
+
+| Feature           | Action                                                        | Expected Result                                                                                  | Actual Result        |
+| ----------------- | ------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | -------------------- |
+| User Feedback     | Perform actions like login, registration, form submission, etc. | User should see visual feedback indicating success or error                                     | Works as expected    |
+
+<details>
+<summary>Screenshots</summary>
+<img src="docs\manual_test\feedback_test_1.jpg">
+<img src="docs\manual_test\feedback_test_2.jpg">
+<img src="docs\manual_test\feedback_test_3.jpg">
+<img src="docs\manual_test\feedback_test_4.jpg">
+<img src="docs\manual_test\feedback_test_5.jpg">
+<img src="docs\manual_test\feedback_test_6.jpg">
+<img src="docs\manual_test\feedback_test_7.jpg">
+<img src="docs\manual_test\feedback_test_8.jpg">
+<img src="docs\manual_test\feedback_test_9.jpg">
+<img src="docs\manual_test\feedback_test_10.jpg">
+<img src="docs\manual_test\feedback_test_11.jpg">
+<img src="docs\manual_test\feedback_test_12.jpg">
+</details>
+
+11. As a user, I can access social media links in the footer to connect with Revixa externally.
+
+| Feature           | Action                                                        | Expected Result                                                                                  | Actual Result        |
+| ----------------- | ------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | -------------------- |
+| Footer            | Click on social media links in the footer                     | User should be redirected to Revixa's social media pages                                        | Works as expected    |
+
+<details>
+<summary>Screenshots</summary>
+<img src="docs\manual_test\footer_test_1.jpg">
+</details>
+
+
+#### Testing User Stories - Admin
+
+12. As an admin, I can create reviews to provide expert insights on specific frameworks.
+(This tool is linked to the project's backend through the following link: https://revixa-2c64c0effe9d.herokuapp.com/)
+
+| Feature           | Action                                                        | Expected Result                                                                                  | Actual Result        |
+| ----------------- | ------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | -------------------- |
+| Review Access     | Navigate to admin review creation page, fill in details, and submit | New review should be created and available for users to view                                   | Works as expected    |
+
+<details>
+<summary>Screenshots</summary>
+<img src="docs\manual_test\admin_test_1.jpg">
+<img src="docs\manual_test\admin_test_2.jpg">
+<img src="docs\manual_test\admin_test_3.jpg">
+</details>
+
+13. As an admin, I can edit or delete reviews to manage the content on the platform.
+(This tool is linked to the project's backend through the following link: https://revixa-2c64c0effe9d.herokuapp.com/)
+
+| Feature           | Action                                                        | Expected Result                                                                                  | Actual Result        |
+| ----------------- | ------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | -------------------- |
+| Review Access     | Navigate to a review and select edit or delete                | Review should be edited or deleted as specified                                                 | Works as expected    |
+
+<details>
+<summary>Screenshots</summary>
+<img src="docs\manual_test\admin_test_4.jpg">
+<img src="docs\manual_test\admin_test_5.jpg">
+<img src="docs\manual_test\admin_test_6.jpg">
+</details>
+
+#### Testing User Stories - Site Owner
+
+14. As the site owner, I want to restrict features to logged-in users to maintain privacy.
+
+| Feature           | Action                                                        | Expected Result                                                                                  | Actual Result        |
+| ----------------- | ------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | -------------------- |
+| Authentication    | Attempt to access restricted features without logging in     | User should be redirected to login page or see an access denied message                          | Works as expected    |
+
+<details>
+<summary>Screenshots</summary>
+<img src="docs\manual_test\restrict_test_1.jpg">
+<img src="docs\manual_test\restrict_test_2.jpg">
+<img src="docs\manual_test\restrict_test_3.jpg">
+<img src="docs\manual_test\restrict_test_4.jpg">
+</details>
+
+15. As the site owner, I want the site to be fully responsive for a smooth experience on all devices.
+
+| Feature           | Action                                                        | Expected Result                                                                                  | Actual Result        |
+| ----------------- | ------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | -------------------- |
+| Responsive Design | Access site on different devices (mobile, tablet, desktop)   | Site should display and function correctly on all screen sizes                                   | Works as expected    |
+
+<details>
+<summary>Screenshots</summary>
+<img src="docs\manual_test\responsive_test_1.jpg">
+<img src="docs\manual_test\responsive_test_2.jpg">
+<img src="docs\manual_test\responsive_test_3.jpg">
+<img src="docs\manual_test\responsive_test_4.jpg">
+<img src="docs\manual_test\responsive_test_5.jpg">
+<img src="docs\manual_test\responsive_test_6.jpg">
+<img src="docs\manual_test\responsive_test_7.jpg">
+<img src="docs\manual_test\responsive_test_8.jpg">
+<img src="docs\manual_test\responsive_test_9.jpg">
+
+</details>
+
+16. As the site owner, I want a 404 error page for easy navigation if users encounter broken links.
+
+| Feature           | Action                                                        | Expected Result                                                                                  | Actual Result        |
+| ----------------- | ------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | -------------------- |
+| 404 Error Page    | Navigate to a nonexistent URL                                 | User should see a custom 404 error page with navigation options                                  | Works as expected    |
+
+<details>
+<summary>Screenshots</summary>
+<img src="docs\manual_test\page404_test_1.jpg">
+</details>
+
+17. As the site owner, I want the user to have a confirmation prompt when an important action is performed.
+
+| Feature           | Action                                                        | Expected Result                                                                                  | Actual Result        |
+| ----------------- | ------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | -------------------- |
+| User Feedback     | Perform an important action like deleting a comment or updating profile | User should see a confirmation prompt before action is executed                                  | Works as expected    |
+
+<details>
+<summary>Screenshots</summary>
+<img src="docs\manual_test\action_test_1.jpg">
+<img src="docs\manual_test\action_test_2.jpg">
+<img src="docs\manual_test\action_test_3.jpg">
+</details>
+
 
 ## Bugs
 
