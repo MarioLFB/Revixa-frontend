@@ -689,7 +689,7 @@ A detailed manual testing process was conducted to validate the functionality of
 | Profile Management | Navigate to account settings, enter current password, new password, and confirm new password, then submit | User's password should be updated with a success confirmation                                   | Works as expected    |
 
 <details>
-<summary>Screenshots</summary>
+<summary>Profile Management</summary>
 <img src="docs\manual_test\password_update_test_1.jpg">
 <img src="docs\manual_test\password_update_test_2.jpg">
 <img src="docs\manual_test\password_update_test_3.jpg">
@@ -703,7 +703,7 @@ A detailed manual testing process was conducted to validate the functionality of
 | Profile Management | Navigate to account settings, change the email address field, and submit | User's email should be updated with a success message                                           | Works as expected    |
 
 <details>
-<summary>Screenshots</summary>
+<summary>Profile Management</summary>
 <img src="docs\manual_test\email_update_test_1.jpg">
 <img src="docs\manual_test\email_update_test_2.jpg">
 <img src="docs\manual_test\email_update_test_3.jpg">
@@ -716,7 +716,7 @@ A detailed manual testing process was conducted to validate the functionality of
 | Navigation        | Use the navigation bar links to access different site sections | User should be able to seamlessly navigate between sections                                      | Works as expected    |
 
 <details>
-<summary>Screenshots</summary>
+<summary>Navigation</summary>
 <img src="docs\manual_test\navigation_test_1.jpg">
 <img src="docs\manual_test\navigation_test_2.jpg">
 <img src="docs\manual_test\navigation_test_3.jpg">
@@ -730,7 +730,7 @@ A detailed manual testing process was conducted to validate the functionality of
 | Home Page         | Visit the homepage                                           | User should see site description and links to login or register                                  | Works as expected    |
 
 <details>
-<summary>Screenshots</summary>
+<summary>Home Page</summary>
 <img src="docs\manual_test\homepage_test_1.jpg">
 </details>
 
@@ -741,7 +741,7 @@ A detailed manual testing process was conducted to validate the functionality of
 | Review Access     | Use search or filters to find reviews                        | User should see a list of relevant reviews matching their interests                              | Works as expected    |
 
 <details>
-<summary>Screenshots</summary>
+<summary>Review Access </summary>
 <img src="docs\manual_test\reviews_test_1.jpg">
 <img src="docs\manual_test\reviews_test_2.jpg">
 </details>
@@ -753,7 +753,7 @@ A detailed manual testing process was conducted to validate the functionality of
 | Commenting and Likes | Add a comment to a review and submit                      | Comment should be posted and displayed under the review                                         | Works as expected    |
 
 <details>
-<summary>Screenshots</summary>
+<summary>Commenting and Likes</summary>
 <img src="docs\manual_test\comment_test_1.jpg">
 <img src="docs\manual_test\comment_test_2.jpg">
 <img src="docs\manual_test\comment_test_3.jpg">
@@ -767,7 +767,7 @@ A detailed manual testing process was conducted to validate the functionality of
 | Commenting and Likes | Click like/unlike on comments                              | Like/unlike status should toggle for the comment                                                | Works as expected    |
 
 <details>
-<summary>Screenshots</summary>
+<summary>Commenting and Likes</summary>
 <img src="docs\manual_test\like_test_1.jpg">
 <img src="docs\manual_test\like_test_2.jpg">
 </details>
@@ -779,7 +779,7 @@ A detailed manual testing process was conducted to validate the functionality of
 | User Feedback     | Perform actions like login, registration, form submission, etc. | User should see visual feedback indicating success or error                                     | Works as expected    |
 
 <details>
-<summary>Screenshots</summary>
+<summary>User Feedback </summary>
 <img src="docs\manual_test\feedback_test_1.jpg">
 <img src="docs\manual_test\feedback_test_2.jpg">
 <img src="docs\manual_test\feedback_test_3.jpg">
@@ -801,7 +801,7 @@ A detailed manual testing process was conducted to validate the functionality of
 | Footer            | Click on social media links in the footer                     | User should be redirected to Revixa's social media pages                                        | Works as expected    |
 
 <details>
-<summary>Screenshots</summary>
+<summary>Footer</summary>
 <img src="docs\manual_test\footer_test_1.jpg">
 </details>
 
@@ -816,7 +816,7 @@ A detailed manual testing process was conducted to validate the functionality of
 | Review Access     | Navigate to admin review creation page, fill in details, and submit | New review should be created and available for users to view                                   | Works as expected    |
 
 <details>
-<summary>Screenshots</summary>
+<summary>Review Access</summary>
 <img src="docs\manual_test\admin_test_1.jpg">
 <img src="docs\manual_test\admin_test_2.jpg">
 <img src="docs\manual_test\admin_test_3.jpg">
@@ -830,7 +830,7 @@ A detailed manual testing process was conducted to validate the functionality of
 | Review Access     | Navigate to a review and select edit or delete                | Review should be edited or deleted as specified                                                 | Works as expected    |
 
 <details>
-<summary>Screenshots</summary>
+<summary>Review Access</summary>
 <img src="docs\manual_test\admin_test_4.jpg">
 <img src="docs\manual_test\admin_test_5.jpg">
 <img src="docs\manual_test\admin_test_6.jpg">
@@ -845,7 +845,7 @@ A detailed manual testing process was conducted to validate the functionality of
 | Authentication    | Attempt to access restricted features without logging in     | User should be redirected to login page or see an access denied message                          | Works as expected    |
 
 <details>
-<summary>Screenshots</summary>
+<summary>Authentication</summary>
 <img src="docs\manual_test\restrict_test_1.jpg">
 <img src="docs\manual_test\restrict_test_2.jpg">
 <img src="docs\manual_test\restrict_test_3.jpg">
@@ -859,7 +859,7 @@ A detailed manual testing process was conducted to validate the functionality of
 | Responsive Design | Access site on different devices (mobile, tablet, desktop)   | Site should display and function correctly on all screen sizes                                   | Works as expected    |
 
 <details>
-<summary>Screenshots</summary>
+<summary>Responsive Design</summary>
 <img src="docs\manual_test\responsive_test_1.jpg">
 <img src="docs\manual_test\responsive_test_2.jpg">
 <img src="docs\manual_test\responsive_test_3.jpg">
@@ -879,7 +879,7 @@ A detailed manual testing process was conducted to validate the functionality of
 | 404 Error Page    | Navigate to a nonexistent URL                                 | User should see a custom 404 error page with navigation options                                  | Works as expected    |
 
 <details>
-<summary>Screenshots</summary>
+<summary>404 Error Page</summary>
 <img src="docs\manual_test\page404_test_1.jpg">
 </details>
 
@@ -890,7 +890,7 @@ A detailed manual testing process was conducted to validate the functionality of
 | User Feedback     | Perform an important action like deleting a comment or updating profile | User should see a confirmation prompt before action is executed                                  | Works as expected    |
 
 <details>
-<summary>Screenshots</summary>
+<summary>User Feedback </summary>
 <img src="docs\manual_test\action_test_1.jpg">
 <img src="docs\manual_test\action_test_2.jpg">
 <img src="docs\manual_test\action_test_3.jpg">
