@@ -16,8 +16,9 @@ Developer: Mario Borges
     1. [Agile Design](#agile-design)
     2. [CRUD Functionality](#crud-functionality)
     3. [Colours](#colours)
-    4. [Fonts](#fonts)
-    5. [Wireframes](#wireframes)
+    4. [Logo](#logo)
+    5. [Fonts](#fonts)
+    6. [Wireframes](#wireframes)
 5. [Technologies Used](#technologies-used)
 6. [Front-End](#front-end)
 7. [Back-End API](#back-end-api)
@@ -56,8 +57,8 @@ Key functionality aspects:
 ### User Requirements and Expectations
 
 - An intuitive, easy-to-navigate interface that simplifies the process of browsing and contributing reviews.
-- Clear and consistent responses for actions like registration, login, and posting reviews by Admins or comments.
-- Visual feedback for actions such as submitting a review, leaving a comment, or updating a profile.
+- Clear and consistent responses for actions like registration, login/logout, posting comments and likes.
+- Visual feedback for actions such as leaving a comment, or updating a profile.
 - Accessibility features to ensure inclusivity for users with various needs.
 - Responsive design for an optimal experience on both mobile and desktop devices.
 - Secure authentication and profile management to protect user data and enhance trust.
@@ -71,7 +72,7 @@ Key functionality aspects:
 5. As a user, I can use the navigation bar to access different sections (Login/Logout and User Area).
 6. As a user, I can view the home page to understand Revixa's purpose and access login or registration options.
 7. As a user, I can find reviews that match my interests.
-8. As a user, I can comment on reviews to engage in discussions or share feedback.
+8. As a user, I can comment multiple times on reviews to engage in discussions or share feedback.
 9. As a user, I can like or unlike comments from other users to support helpful content.
 10. As a user, I can see feedback when I have a successful or unsuccessful action.
 11. As a user, I can access social media links in the footer to connect with Revixa externally.
@@ -100,10 +101,10 @@ This agile methodology enabled the timely delivery of core functionalities for R
 
 Revixa offers full CRUD functionality for user account management:
 
-- **Create**: Users can register and create accounts, post comments on reviews, and give likes to comments. Admins can create new reviews.
-- **Read**: Users can view their profile information, view reviews, read comments, and see And see the likes counter.
-- **Update**: Users can update their profile details, change their email and password, edit their comments, and toggle likes on other users’ comments. Admins only can edit reviews as necessary.
-- **Delete**: Users can remove their comments and likes previously liked. Admins have the ability to delete reviews to maintain platform quality.
+- **Create**: Users can register and create accounts, post comments on reviews, and give likes to comments. (Admins can create new reviews using the backend).
+- **Read**: Users can view their profile information, view reviews, read comments, and see And see the likes counter. (visitors have previous access to the reviews on the main page in the carousel of reviews)
+- **Update**: Users can update their profile details, change their email and password, edit their comments, and toggle likes on other users’ comments. (Admins can update the reviews through the backend)
+- **Delete**: Users can remove their comments and likes previously liked. Admins have the ability to delete reviews to maintain platform quality. (Admins have the ability to delete reviews through the backend)
 
 ### Colours
 
@@ -113,6 +114,11 @@ The Revixa color palette includes shades of orange and white, providing a modern
 <summary>Colours</summary>
 <img src="docs/color_wheel.png">
 </details>
+
+### Logo
+
+The "Revixa" logo features a warm gradient and rounded typography, creating an inviting and engaging visual identity that aligns well with community interaction and user engagement.
+
 
 ### Fonts
 
